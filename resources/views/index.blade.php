@@ -29,9 +29,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Produk</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sejarah Lumintu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -204,19 +204,19 @@
     <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">About</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Sejarah Lumintu</h2>
+                <h3 class="section-subheading text-muted">Ayo simak dan lihat perjalanan CV. Lumintu Energi Persada, dari awal berdiri hingga berkembang menjadi produsen biodiesel berkualitas tinggi yang terus berinovasi dan berkomitmen memberikan yang terbaik!🚀</h3>
             </div>
             <ul class="timeline">
                 <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>2006</h4>
+                            <h4 class="subheading">Awal Perjalanan</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Lumintu Energi Persada memulai langkah pertamanya sebagai perusahaan lokal yang bergerak di industri minyak nabati. Dari sini, kami melihat potensi besar dalam pengolahan minyak nabati menjadi biodiesel.</p>
                         </div>
                     </div>
                 </li>
@@ -224,11 +224,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
+                            <h4>11 Maret 2014</h4>
+                            <h4 class="subheading">Pendirian Perusahaan Resmi</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Berkat perkembangan yang pesat, kami secara resmi mendirikan Lumintu Energi Persada sebagai perusahaan berbadan hukum yang 100% berfokus pada produksi biodiesel untuk kebutuhan dalam dan luar negeri.</p>
                         </div>
                     </div>
                 </li>
@@ -236,11 +236,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>December 2015</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
+                            <h4>2014-2019</h4>
+                            <h4 class="subheading">Ekspansi dan Relokasi</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Demi menyesuaikan dengan permintaan yang terus meningkat, kapasitas produksi kami mencapai 700 ton/bulan, dan seiring waktu, kami mengalami beberapa kali relokasi, yaitu pada 2014-2016 di Dsn. Kramat, Desa Wonokasian, Wonoayu, Sidoarjo, serta pada 2016-2019 di Pergudangan Meiko Abadi 7, Jimbaran Wetan, Wonoayu, Sidoarjo.</p>
                         </div>
                     </div>
                 </li>
@@ -248,22 +248,21 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>July 2020</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
+                            <h4>2020-2025</h4>
+                            <h4 class="subheading">Fokus Peningkatan Mutu dan Layanan</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p class="text-muted">Sejak 2020, kami beroperasi di Pergudangan Minyak Babe, Ds. Wonoayu. Kami terus berinovasi dan berkomitmen meningkatkan kualitas serta layanan guna memenuhi permintaan pasar yang terus berkembang.
+
+</p>
                         </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
-                        <h4>
-                            Be Part
+                        <h4> 
+                            Jadilah bagian dari perjalanan kami!
                             <br />
-                            Of Our
-                            <br />
-                            Story!
                         </h4>
                     </div>
                 </li>
