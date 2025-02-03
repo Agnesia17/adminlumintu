@@ -29,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Produk</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -50,14 +50,14 @@
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Layanan</h2>
-                <h3 class="section-subheading text-muted">CV Lumintu Energi Persada menawarkan layanan :</h3>
+                <h2 class="section-heading text-uppercase">Produk</h2>
+                <h3 class="section-subheading text-muted">CV Lumintu Energi Persada menawarkan Produk :</h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/layanan/minyakjelantah.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">MINYAK JELANTAH</h4>
                     <p class="text-muted">Minyak goreng bekas pakai yang telah mengalami degradasi kualitas akibat pemanasan berulang.</p>
@@ -65,7 +65,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/layanan/palmacidoil.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">PALM ACID OIL(PAO)</h4>
                     <p class="text-muted">Produk sampingan dari pemurnian minyak sawit mentah yang mengandung asam lemak tinggi dan digunakan dalam industri sabun, pakan ternak, dan biodiesel.</p>
@@ -73,7 +73,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/layanan/hightacid.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">HIGH ACID CRUDE PALM OIL</h4>
                     <p class="text-muted">Minyak sawit mentah dengan kadar asam lemak bebas (FFA) tinggi, biasanya berasal dari buah sawit yang telah mengalami fermentasi atau penundaan dalam pengolahan.</p>
@@ -81,7 +81,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/layanan/palmfatty.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">PALM FATTY ACID DISTILLATE</h4>
                     <p class="text-muted">roduk sampingan dari proses pemurnian minyak sawit yang kaya akan asam lemak dan sering digunakan dalam industri oleokimia, lilin, dan pakan ternak.</p>
@@ -89,7 +89,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/layanan/palmkernel.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">PALM KERNEL EXPELLER MEAL</h4>
                     <p class="text-muted">Hasil sampingan dari ekstraksi minyak inti sawit yang digunakan sebagai pakan ternak karena kandungan proteinnya yang tinggi.</p>
@@ -97,7 +97,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/layanan/palmkernelshell.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">PALM KERNEL SHELL</h4>
                     <p class="text-muted">Cangkang biji kelapa sawit yang keras dan sering digunakan sebagai bahan bakar biomassa karena nilai kalorinya yang tinggi.</p>
@@ -109,97 +109,91 @@
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Portfolio</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Produk</h2>
+                <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan dianntaranya:</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 1-->
+                    <!-- Produk 1-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/portfolio/1.jpg')}}" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Threads</div>
-                            <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            <div class="portfolio-caption-heading">USED COOKING OIL(UCO) MINYAK JELANTAH</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
+                    <!-- Produk 2-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Explore</div>
-                            <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            <div class="portfolio-caption-heading">PALM ACID OIL(PAO)</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 3-->
+                    <!-- Produk 3-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Finish</div>
-                            <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            <div class="portfolio-caption-heading">HIGH ACID CRUDE PALM OIL</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
+                    <!-- Produk 4-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Lines</div>
-                            <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            <div class="portfolio-caption-heading">PALM FATTY ACID DISTILLATE</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                    <!-- Portfolio item 5-->
+                    <!-- Produk 5-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Southwest</div>
-                            <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            <div class="portfolio-caption-heading">PALM KERNEL EXPELLER MEAL</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <!-- Portfolio item 6-->
+                    <!-- Produk 6-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Window</div>
-                            <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            <div class="portfolio-caption-heading">PALM KERNEL SHELL</div>
                         </div>
                     </div>
                 </div>
@@ -425,33 +419,22 @@
         </div>
     </footer>
     <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
+    <!-- Produk 1 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Threads
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Illustration
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
+                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
+                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    KEMBALI
                                 </button>
                             </div>
                         </div>
@@ -460,33 +443,22 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 2 modal popup-->
+    <!-- Produk 2 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Explore
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Graphic Design
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase">PALM ACID OIL(PAO)</h2>
+                                <p class="item-intro text-muted">PFAD, solusi ramah lingkungan untuk industri sabun, pakan ternak, dan biodiesel!</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" alt="..." />
+                                <p>Produk sampingan dari pemurnian minyak sawit mentah yang mengandung asam lemak tinggi dan digunakan dalam industri sabun, pakan ternak, dan biodiesel.</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    KEMBALI
                                 </button>
                             </div>
                         </div>
@@ -495,33 +467,22 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 3 modal popup-->
+    <!-- Produk 3 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Finish
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Identity
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase">HIGH ACID CRUDE PALM OIL</h2>
+                                <p class="item-intro text-muted">CPO dengan FFA tinggi, pilihan tepat untuk biodiesel dan industri oleokimia!</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" alt="..." />
+                                <p>Minyak sawit mentah dengan kadar asam lemak bebas (FFA) tinggi, biasanya berasal dari buah sawit yang telah mengalami fermentasi atau penundaan dalam pengolahan.</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    KEMBALI
                                 </button>
                             </div>
                         </div>
@@ -530,33 +491,22 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 4 modal popup-->
+    <!-- Produk 4 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Lines
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Branding
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase">PALM FATTY ACID DISTILLATE</h2>
+                                <p class="item-intro text-muted">Palm Fatty Acid Distillate (PFAD), bahan berkualitas tinggi untuk industri oleokimia, lilin, dan pakan ternak!</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" alt="..." />
+                                <p>Produk sampingan dari proses pemurnian minyak sawit yang kaya akan asam lemak dan sering digunakan dalam industri oleokimia, lilin, dan pakan ternak.</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    KEMBALI
                                 </button>
                             </div>
                         </div>
@@ -565,33 +515,22 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 5 modal popup-->
+    <!-- Produk 5 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Southwest
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase">PALM KERNEL EXPELLER MEAL</h2>
+                                <p class="item-intro text-muted">Palm Kernel Expeller (PKE), sumber pakan ternak berkualitas tinggi dengan kandungan protein tinggi</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" alt="..." />
+                                <p>Hasil sampingan dari ekstraksi minyak inti sawit yang digunakan sebagai pakan ternak karena kandungan proteinnya yang tinggi.</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    KEMBALI
                                 </button>
                             </div>
                         </div>
@@ -600,33 +539,22 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 6 modal popup-->
+    <!-- Produk 6 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Window
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase">PALM KERNEL SHELL</h2>
+                                <p class="item-intro text-muted">Palm Kernel Shell (PKS), solusi bahan bakar biomassa berkualitas tinggi dengan nilai kalori tinggi!</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" alt="..." />
+                                <p>Palm Kernel Shell (PKS) adalah cangkang biji kelapa sawit yang keras dan memiliki nilai kalori tinggi, menjadikannya pilihan ideal sebagai bahan bakar biomassa yang efisien, ramah lingkungan, dan berkelanjutan untuk berbagai industri.</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
+                                    KEMBALI
                                 </button>
                             </div>
                         </div>
