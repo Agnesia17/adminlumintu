@@ -57,50 +57,50 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        <img src="{{asset('landingpage/assets/img/layanan/minyakjelantah.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">MINYAK JELANTAH</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Minyak goreng bekas pakai yang telah mengalami degradasi kualitas akibat pemanasan berulang.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        <img src="{{asset('landingpage/assets/img/layanan/palmacidoil.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">PALM ACID OIL(PAO)</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Produk sampingan dari pemurnian minyak sawit mentah yang mengandung asam lemak tinggi dan digunakan dalam industri sabun, pakan ternak, dan biodiesel.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        <img src="{{asset('landingpage/assets/img/layanan/hightacid.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">HIGH ACID CRUDE PALM OIL</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Minyak sawit mentah dengan kadar asam lemak bebas (FFA) tinggi, biasanya berasal dari buah sawit yang telah mengalami fermentasi atau penundaan dalam pengolahan.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        <img src="{{asset('landingpage/assets/img/layanan/palmfatty.jpg')}}" class="custom-icon">
                     </span>
-                    <h4 class="my-3">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="my-3">PALM FATTY ACID DISTILLATE</h4>
+                    <p class="text-muted">roduk sampingan dari proses pemurnian minyak sawit yang kaya akan asam lemak dan sering digunakan dalam industri oleokimia, lilin, dan pakan ternak.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        <img src="{{asset('landingpage/assets/img/layanan/palmkernel.jpg')}}" class="custom-icon">
                     </span>
-                    <h4 class="my-3">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="my-3">PALM KERNEL EXPELLER MEAL</h4>
+                    <p class="text-muted">Hasil sampingan dari ekstraksi minyak inti sawit yang digunakan sebagai pakan ternak karena kandungan proteinnya yang tinggi.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        <img src="{{asset('landingpage/assets/img/layanan/palmkernelshell.jpg')}}" class="custom-icon">
                     </span>
-                    <h4 class="my-3">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="my-3">PALM KERNEL SHELL</h4>
+                    <p class="text-muted">Cangkang biji kelapa sawit yang keras dan sering digunakan sebagai bahan bakar biomassa karena nilai kalorinya yang tinggi.</p>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                            <img class="img-fluid" src="{{asset('landingpage/assets/img/portfolio/1.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Threads</div>
