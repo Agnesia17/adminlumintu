@@ -29,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partner">Partner</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Sejarah Lumintu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -39,71 +39,74 @@
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
+
+    <!-- <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Welcome To Office!</div>
             <div class="masthead-heading text-uppercase">CV LUMINTU ENERGI PERSADA</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Baca Lebih Banyak</a>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#partner">Baca Lebih Banyak</a>
+        </div>
+    </header> -->
+
+    <header id="carouselHeader" class="carousel slide masthead" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{asset('landingpage/assets/img/dashboard/bg.png')}}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{{asset('landingpage/assets/img/dashboard/dashboard1.jpg')}}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{{asset('landingpage/assets/img/dashboard/dashboard2.jpg')}}" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="container carousel-caption text-center">
+            <div class="masthead-subheading">Welcome To Office!</div>
+            <div class="masthead-heading text-uppercase">CV LUMINTU ENERGI PERSADA</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#partner">Baca Lebih Banyak</a>
         </div>
     </header>
-    <!-- Services-->
-    <section class="page-section" id="services">
+
+    <!-- partner-->
+    <section class="page-section" id="partner">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Produk</h2>
-                <h3 class="section-subheading text-muted">CV Lumintu Energi Persada menawarkan Produk :</h3>
+                <h2 class="section-heading text-uppercase">Partner</h2>
+                <h3 class="section-subheading text-muted">CV Lumintu Energi Persada telah bekerjasama dengan :</h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/partner/pabrik.jpg')}}" class="custom-icon">
                     </span>
-                    <h4 class="my-3">MINYAK JELANTAH</h4>
-                    <p class="text-muted">Minyak goreng bekas pakai yang telah mengalami degradasi kualitas akibat pemanasan berulang.</p>
+                    <h4 class="my-3">Industri Dalam Negeri</h4>
+                    <p class="text-muted">Kami menyediakan biodiesel berkualitas tinggi yang membantu industri mengurangi ketergantungan pada bahan bakar fosil, menekan biaya operasional, dan memenuhi standar energi hijau.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/partner/pabrik genteng.jpg')}}" class="custom-icon">
                     </span>
-                    <h4 class="my-3">PALM ACID OIL(PAO)</h4>
-                    <p class="text-muted">Produk sampingan dari pemurnian minyak sawit mentah yang mengandung asam lemak tinggi dan digunakan dalam industri sabun, pakan ternak, dan biodiesel.</p>
+                    <h4 class="my-3">UMKM</h4>
+                    <p class="text-muted">Biodiesel kami menjadi solusi bahan bakar yang lebih efisien dan ramah lingkungan bagi UMKM, membantu mereka menghemat biaya partnerspabriki dengan harga yang kompetitif.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" class="custom-icon">
+                        <img src="{{asset('landingpage/assets/img/partner/pabrik container.jpg')}}" class="custom-icon">
                     </span>
-                    <h4 class="my-3">HIGH ACID CRUDE PALM OIL</h4>
-                    <p class="text-muted">Minyak sawit mentah dengan kadar asam lemak bebas (FFA) tinggi, biasanya berasal dari buah sawit yang telah mengalami fermentasi atau penundaan dalam pengolahan.</p>
+                    <h4 class="my-3">Ekspor Biodisel</h4>
+                    <p class="text-muted">Kami memastikan pasokan biodiesel stabil dengan standar internasional, mendukung transisi energi hijau di pasar global dan memperluas jangkauan energi berkelanjutan.</p>
                 </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" class="custom-icon">
-                    </span>
-                    <h4 class="my-3">PALM FATTY ACID DISTILLATE</h4>
-                    <p class="text-muted">roduk sampingan dari proses pemurnian minyak sawit yang kaya akan asam lemak dan sering digunakan dalam industri oleokimia, lilin, dan pakan ternak.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" class="custom-icon">
-                    </span>
-                    <h4 class="my-3">PALM KERNEL EXPELLER MEAL</h4>
-                    <p class="text-muted">Hasil sampingan dari ekstraksi minyak inti sawit yang digunakan sebagai pakan ternak karena kandungan proteinnya yang tinggi.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <img src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" class="custom-icon">
-                    </span>
-                    <h4 class="my-3">PALM KERNEL SHELL</h4>
-                    <p class="text-muted">Cangkang biji kelapa sawit yang keras dan sering digunakan sebagai bahan bakar biomassa karena nilai kalorinya yang tinggi.</p>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
@@ -118,9 +121,9 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">USED COOKING OIL(UCO) MINYAK JELANTAH</div>
@@ -132,9 +135,9 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" alt="..." />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">PALM ACID OIL(PAO)</div>
@@ -146,9 +149,9 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" alt="..." />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">HIGH ACID CRUDE PALM OIL</div>
@@ -160,9 +163,9 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" alt="..." />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">PALM FATTY ACID DISTILLATE</div>
@@ -174,9 +177,9 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" alt="..." />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">PALM KERNEL EXPELLER MEAL</div>
@@ -188,9 +191,9 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" alt="..." />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">PALM KERNEL SHELL</div>
@@ -254,13 +257,13 @@
                         <div class="timeline-body">
                             <p class="text-muted">Sejak 2020, kami beroperasi di Pergudangan Minyak Babe, Ds. Wonoayu. Kami terus berinovasi dan berkomitmen meningkatkan kualitas serta layanan guna memenuhi permintaan pasar yang terus berkembang.
 
-</p>
+                            </p>
                         </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
-                        <h4> 
+                        <h4>
                             Jadilah bagian dari perjalanan kami!
                             <br />
                         </h4>

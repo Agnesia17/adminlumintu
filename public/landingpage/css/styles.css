@@ -10942,7 +10942,8 @@ p {
     margin-right: 0;
   }
 }
-header.masthead {
+/* HEADER LAMA */
+/* header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
@@ -10966,6 +10967,43 @@ header.masthead .masthead-heading {
   line-height: 3.25rem;
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} */
+
+/* HEADER BARU */
+header.masthead .masthead-subheading {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .masthead-heading {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead {
+  height: 100vh; /* Mengisi tinggi layar penuh */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  
+}
+.carousel-item img {
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+
+}
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (min-width: 768px) {
@@ -11326,3 +11364,9 @@ section#contact form#contactForm :-ms-input-placeholder {
   object-fit: cover; /* Memastikan gambar memenuhi lingkaran */
 }
 
+.landscape-img {
+  width: 100%; /* Agar gambar melebar */
+  height: auto; /* Menyesuaikan tinggi */
+  object-fit:contain; /* Memastikan gambar tetap proporsional */
+  aspect-ratio: 16/9; /* Menjadikan gambar lebih lebar */
+}
