@@ -32,8 +32,14 @@
                     <li class="nav-item"><a class="nav-link" href="#partner">Partner</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Sejarah Lumintu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#perihal">Perihal</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('login')}}">
+                        <span class="px-3 py-2 rounded bg-primary text-white fw-bold">Login</span>
+                    </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -116,7 +122,7 @@
                 <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan dianntaranya:</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-6">
                     <!-- Produk 1-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -273,52 +279,73 @@
         </div>
     </section>
     <!-- Team-->
-    <section class="page-section bg-light" id="team">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                        <h4>Parveen Anand</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                        <h4>Diana Petersen</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+    <section class="page-section bg-light" id="perihal">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Perihal</h2>
+            <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan di antaranya:</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Produk 1-->
+                <div class="perihal-item text-center">
+                    <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal1">
+                        <div class="perihal-hover">
+                            <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                    </a>
+                    <div class="perihal-caption">
+                        <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Produk 1-->
+                <div class="perihal-item text-center">
+                    <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal2">
+                        <div class="perihal-hover">
+                            <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                    </a>
+                    <div class="perihal-caption">
+                        <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
+                    </div>
                 </div>
+                
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Produk 1-->
+                <div class="perihal-item text-center">
+                    <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal3">
+                        <div class="perihal-hover">
+                            <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                    </a>
+                    <div class="perihal-caption">
+                        <div class="perihal-caption-heading">USED COOKING OIL</div>
+                    </div>
+                </div>
+                
             </div>
         </div>
+    </div>
+
+</section>
+    <section class="page-section" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">MARI BEKERJA SAMA DENGAN KAMI</h2>
+                <h3 class="text-muted-1">CV. LUMINTU ENERGI PERSADA</h3>
+                <p class="text-muted">Pergudangan Minyak Babe Ds. Wonoayu RT.02 RW. 01 (Barat KUD) Kec. Wonoayu Kab. Sidoarjo Jawa Timur</p>
+                <p class="text-muted">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p>
+                <!-- <p class=" text-muted">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p> -->
+                <iframe src="https://www.google.com/maps?q=-7.436373, 112.617804&hl=id&z=15&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div> 
     </section>
-    <!-- Clients-->
+   
     <div class="py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -337,77 +364,11 @@
             </div>
         </div>
     </div>
-    <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contact Us</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                <div class="row align-items-stretch mb-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <!-- Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                        </div>
-                        <div class="form-group">
-                            <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                        </div>
-                        <div class="form-group mb-md-0">
-                            <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-textarea mb-md-0">
-                            <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center text-white mb-3">
-                        <div class="fw-bolder">Form submission successful!</div>
-                        To activate this form, sign up at
-                        <br />
-                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                    </div>
-                </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                </div>
-                <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-            </form>
-        </div>
-    </section>
-    <!-- Footer-->
+    <!-- footer -->
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                <div class="col-lg-4 text-lg-start">Copyright copy; Your Website 2023</div>
                 <div class="col-lg-4 my-3 my-lg-0">
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -420,8 +381,77 @@
             </div>
         </div>
     </footer>
-    <!-- Portfolio Modals-->
-    <!-- Produk 1 modal popup-->
+  
+    <div class="portfolio-modal modal fade" id="perihalModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
+                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
+                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    KEMBALI
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="perihalModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
+                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
+                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    KEMBALI
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="perihalModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('landingpage/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
+                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
+                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    KEMBALI
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div
+    <div></div>
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -445,7 +475,6 @@
             </div>
         </div>
     </div>
-    <!-- Produk 2 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -8094,6 +8094,11 @@ textarea.form-control-lg {
   color: #6c757d !important;
 }
 
+.text-muted-1 {
+  --bs-text-opacity: 1;
+  color: #ffc800 !important;
+}
+
 .text-black-50 {
   --bs-text-opacity: 1;
   color: rgba(0, 0, 0, 0.5) !important;
@@ -11107,7 +11112,42 @@ header.masthead {
 .portfolio-modal .close-modal:hover {
   opacity: 0.3;
 }
-
+.perihal-item {
+  max-width: 26rem;
+  margin: auto;
+}
+.perihal-link {
+  position: relative;
+  display: block;
+}
+.perihal-hover {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 200, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+.perihal-hover-content {
+  font-size: 1.25rem;
+  color: white;
+}
+.perihal-link:hover .perihal-hover {
+  opacity: 1;
+}
+.perihal-caption {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #fff;
+}
+.perihal-caption-heading {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
 .timeline {
   position: relative;
   padding: 0;
@@ -11367,6 +11407,6 @@ section#contact form#contactForm :-ms-input-placeholder {
 .landscape-img {
   width: 100%; /* Agar gambar melebar */
   height: auto; /* Menyesuaikan tinggi */
-  object-fit:contain; /* Memastikan gambar tetap proporsional */
+  object-fit:cover; /* Memastikan gambar tetap proporsional */
   aspect-ratio: 16/9; /* Menjadikan gambar lebih lebar */
 }
