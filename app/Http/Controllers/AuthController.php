@@ -64,8 +64,6 @@ class AuthController extends Controller
 
 
         // Debugging untuk melihat input yang diterima
-
-
         $fullName = trim($request->firstName) . ' ' . trim($request->lastName);
 
         $user = User::create([

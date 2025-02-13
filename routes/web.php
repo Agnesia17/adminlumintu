@@ -67,5 +67,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+    Route::get('/penjualan' , function(){
+        return view('admin.Laporan.penjualan');
+    })->name('penjualan');
+    Route::get('/pembelian' , function(){
+        return view('admin.Laporan.pembelian');
+    })->name('pembelian');
+    Route::get('/laba' , function(){
+        return view('admin.Laporan.laba');
+    })->name('laba');
+    
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
