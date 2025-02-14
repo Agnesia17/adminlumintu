@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::get('/', function () {
@@ -67,15 +68,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-    Route::get('/penjualan' , function(){
+
+    Route::get('/penjualan', function () {
         return view('admin.Laporan.penjualan');
     })->name('penjualan');
-    Route::get('/pembelian' , function(){
+
+    Route::get('/pembelian', function () {
         return view('admin.Laporan.pembelian');
     })->name('pembelian');
-    Route::get('/laba' , function(){
+
+    Route::get('/laba', function () {
         return view('admin.Laporan.laba');
     })->name('laba');
-    
+
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
+    Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+    Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/product/addproduct', [ProductController::class, 'create'])->name('product.addproduct');
+    Route::delete('/product/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
