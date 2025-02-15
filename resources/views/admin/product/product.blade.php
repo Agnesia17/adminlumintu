@@ -11,8 +11,6 @@
             Tambah
         </a>
     </div>
-
-
     @if ($products->count() > 0)
     <div class="card shadow">
         <div class="card-body">
@@ -23,6 +21,7 @@
                         <th>Nama Produk</th>
                         <th>Harga Beli</th>
                         <th>Harga Jual</th>
+                        <th>Stok</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -33,6 +32,7 @@
                         <td>{{ $product->nama_produk }}</td>
                         <td>Rp {{ number_format($product->harga_beli, 0, ',', '.') }},00</td>
                         <td>Rp {{ number_format($product->harga_jual, 0, ',', '.') }},00</td>
+                        <td>{{$product->stok}} Kg</td>
                         <td class="text-center">
                             <button class="btn btn-sm btn-primary edit-btn"
                                 data-id="{{ $product->id }}"
@@ -51,13 +51,12 @@
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
-
                     </tr>
                     @endforeach
                 </tbody>
             </table>
             <!-- Pagination -->
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex  mt-3">
                 <nav>
                     <ul class="pagination">
                         <!-- Tombol Previous -->
@@ -77,7 +76,6 @@
                                 <a class="page-link" href="{{ $products->url($i) }}">{{ $i }}</a>
                             </li>
                             @endfor
-
                             <!-- Tombol Next -->
                             @if ($products->hasMorePages())
                             <li class="page-item">

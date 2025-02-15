@@ -32,49 +32,29 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang 👋</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Lupa Kata Sandi?👋</h1>
+                                        <p class="mb-4">Silakan Masukan email yang telah didaftrakan pada aplikasi sebelumnya</p>
                                     </div>
-                                    @if(session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                    @endif
-                                    @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul class="mb-0">
-                                            @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    @endif
-                                    <form class="user" method="POST" action="{{route('login')}}">
+                                    <form class="user" action="{{route('password.email')}}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user"
                                                 placeholder="Masukkan email" value="{{old('email')}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                placeholder="Masukkan password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" name="remember" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Ingat Saya</label>
-                                            </div>
+                                            @error('email')
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                         <button type="submit" class="btn btn-warning btn-user btn-block">
-                                            Masuk
+                                            Periksa Email
                                         </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
 
-                                        <a class="small" href="{{route('password.request')}}">Lupa Password?</a>
+                                        <a class="small" href="#">Belum Punya Akun? Daftar!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="{{route('register')}}">Daftar Akun</a>
+                                        <a class="small" href="#">Sudah Punya Akun? Login!</a>
                                     </div>
                                 </div>
                             </div>

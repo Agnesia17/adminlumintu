@@ -35,9 +35,9 @@
                     <li class="nav-item"><a class="nav-link" href="#perihal">Perihal</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">
-                        <span class="px-3 py-2 rounded bg-primary text-white fw-bold">Login</span>
-                    </a>
+                        <a class="nav-link" href="{{route('login')}}">
+                            <span class="px-3 py-2 rounded bg-primary text-white fw-bold">Login</span>
+                        </a>
                     </li>
 
                 </ul>
@@ -45,14 +45,6 @@
         </div>
     </nav>
     <!-- Masthead-->
-
-    <!-- <header class="masthead">
-        <div class="container">
-            <div class="masthead-subheading">Welcome To Office!</div>
-            <div class="masthead-heading text-uppercase">CV LUMINTU ENERGI PERSADA</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#partner">Baca Lebih Banyak</a>
-        </div>
-    </header> -->
 
     <header id="carouselHeader" class="carousel slide masthead" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -280,60 +272,60 @@
     </section>
     <!-- Team-->
     <section class="page-section bg-light" id="perihal">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Perihal</h2>
-            <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan di antaranya:</h3>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Produk 1-->
-                <div class="perihal-item text-center">
-                    <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal1">
-                        <div class="perihal-hover">
-                            <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Perihal</h2>
+                <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan di antaranya:</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Produk 1-->
+                    <div class="perihal-item text-center">
+                        <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal1">
+                            <div class="perihal-hover">
+                                <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                        </a>
+                        <div class="perihal-caption">
+                            <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
                         </div>
-                        <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
-                    </a>
-                    <div class="perihal-caption">
-                        <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Produk 1-->
-                <div class="perihal-item text-center">
-                    <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal2">
-                        <div class="perihal-hover">
-                            <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Produk 1-->
+                    <div class="perihal-item text-center">
+                        <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal2">
+                            <div class="perihal-hover">
+                                <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                        </a>
+                        <div class="perihal-caption">
+                            <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
                         </div>
-                        <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
-                    </a>
-                    <div class="perihal-caption">
-                        <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
                     </div>
-                </div>
-                
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Produk 1-->
-                <div class="perihal-item text-center">
-                    <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal3">
-                        <div class="perihal-hover">
-                            <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
-                    </a>
-                    <div class="perihal-caption">
-                        <div class="perihal-caption-heading">USED COOKING OIL</div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
 
-</section>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Produk 1-->
+                    <div class="perihal-item text-center">
+                        <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal3">
+                            <div class="perihal-hover">
+                                <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                        </a>
+                        <div class="perihal-caption">
+                            <div class="perihal-caption-heading">USED COOKING OIL</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
     <section class="page-section" id="team">
         <div class="container">
             <div class="text-center">
@@ -343,9 +335,9 @@
                 <p class="text-muted">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p>
                 <!-- <p class=" text-muted">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p> -->
                 <iframe src="https://www.google.com/maps?q=-7.436373, 112.617804&hl=id&z=15&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div> 
+            </div>
     </section>
-   
+
     <div class="py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -381,7 +373,7 @@
             </div>
         </div>
     </footer>
-  
+
     <div class="portfolio-modal modal fade" id="perihalModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -451,7 +443,8 @@
             </div>
         </div>
     </div
-    <div></div>
+        <div>
+    </div>
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -57,21 +57,21 @@
                                         @csrf
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="text" name="firstName" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama Depan">
+                                                <input type="text" name="firstName" value="{{old('firstName')}}" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama Depan">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text" name="lastName" class="form-control form-control-user" id="exampleLastName" placeholder="Nama Belakang">
+                                                <input type="text" name="lastName" value="{{old('lastName')}}" class="form-control form-control-user" id="exampleLastName" placeholder="Nama Belakang">
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Alamat Email">
+                                            <input type="email" name="email" value="{{old('email')}}" class="form-control form-control-user" id="exampleInputEmail" placeholder="Alamat Email">
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                                <input type="password" name="password" value="{{old('password')}}" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="password" name="password_confirmation" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Ulangi Password">
+                                                <input type="password" name="password_confirmation" value="{{old('password_confirmation')}}" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Ulangi Password">
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-warning btn-user btn-block">

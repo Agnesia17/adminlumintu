@@ -22,54 +22,32 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
     <!-- Heading -->
     <div class="sidebar-heading">
         Admin
     </div>
-
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Route::is('product') ? 'active' : '' }}">
+    <li class="nav-item {{ Route::is('product') || Route::is('product.addproduct') ? 'active' : '' }}">
         <a class="nav-link" href="{{route('product')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Produk</span></a>
     </li>
-    <!-- <li class="nav-item {{ Route::is('laporan') ? 'active' : '' }}">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Laporan</span>
-        </a>
-        <div id="collapseTwo" class="collapse {{ Route::is('laporan') ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Laporan:</h6>
-                <a class="collapse-item {{ Route::is('pembelian') ? 'active' : '' }}" href="{{ route('pembelian') }}">Laporan Pembelian</a>
-                <a class="collapse-item {{ Route::is('penjualan') ? 'active' : '' }}" href="{{ route('penjualan') }}">Laporan Penjualan</a>
-                <a class="collapse-item {{ Route::is('laba') ? 'active' : '' }}" href="{{ route('laba') }}">Laporan Laba</a>
-            </div>
-        </div>
-    </li>  -->
 
-    <li class="nav-item {{ request()->routeIs('pembelian') || request()->routeIs('penjualan') || request()->routeIs('laba') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->routeIs('pembelian') || request()->routeIs('pembelian.add-pembelian') || request()->routeIs('penjualan') || request()->routeIs('laba') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="false" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Laporan</span>
         </a>
-        <div id="collapseTwo" class="collapse {{ request()->routeIs('pembelian') || request()->routeIs('penjualan') || request()->routeIs('laba') ? 'show' : '' }}">
+        <div id="collapseTwo" class="collapse {{ request()->routeIs('pembelian')  || request()->routeIs('pembelian.add-pembelian') || request()->routeIs('penjualan') || request()->routeIs('laba') ? 'show' : '' }}">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Laporan:</h6>
-                <a class="collapse-item {{ request()->routeIs('pembelian') ? 'active' : '' }}" href="{{ route('pembelian') }}">Laporan Pembelian</a>
+                <a class="collapse-item {{ request()->routeIs('pembelian') ||  request()->routeIs('pembelian.add-pembelian') ? 'active' : '' }}" href="{{ route('pembelian') }}">Laporan Pembelian</a>
                 <a class="collapse-item {{ request()->routeIs('penjualan') ? 'active' : '' }}" href="{{ route('penjualan') }}">Laporan Penjualan</a>
                 <a class="collapse-item {{ request()->routeIs('laba') ? 'active' : '' }}" href="{{ route('laba') }}">Laporan Laba</a>
             </div>
         </div>
     </li>
-
-
-
-
-
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
@@ -90,11 +68,9 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
-
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-
 </ul>
 <!-- End of Sidebar -->

@@ -6,18 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class LaporanPembelian extends Model
+class LaporanPenjualan extends Model
 {
-    //
+
     use HasFactory, Notifiable;
-    protected $table = 'laporan_pembelian';
+    protected $table = 'laporan_penjualan';
     protected $fillable = [
         'tanggal',
-        'nama_supplier',
+        'nama_pembeli',
         'nama_produk',
-        'harga_beli',
+        'harga_jual',
         'jumlah',
         'total',
         'id_product'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'id_product');
+    }
 }
