@@ -32,7 +32,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Month and Year Filter -->
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
@@ -151,21 +150,27 @@
     @else
     <!-- Tampilan ketika tidak ada produk -->
     <div class="card shadow">
-        <div class="card-body text-center py-5">
+
+        <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
+            <!-- <dotlottie-player src="https://lottie.host/bde8d481-4caf-4f4b-841f-879c5b5ae12e/8yrDucbsbm.lottie" class="text-center" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player> -->
+            <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
+            <!-- <dotlottie-player src="https://lottie.host/fc217627-295e-478a-99a3-3dd4c5a50aa4/ba711NqmKQ.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player> -->
             <h5 class="text-gray-500">Tidak ada data Penjualan.</h5>
         </div>
     </div>
     @endif
-
     @endsection
 
     @push('scripts')
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('sbadmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-    <script src="{{asset('sbadmin/vendor/chart.js/Chart.min.js')}}"></script>
-    <script src="{{asset('sbadmin/js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('sbadmin/js/demo/chart-pie-demo.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.custom-table').DataTable({
+                "paging": false, // Hilangkan pagination
+                "info": false, // Hilangkan "Showing 1 to 2 of 2 entries"
+                "lengthChange": false, // Hilangkan dropdown "Show entries"
+                "ordering": true, // Tetap aktifkan sorting
+                "searching": true // Tetap aktifkan pencarian
+            });
+        });
+    </script>
     @endpush

@@ -7,7 +7,7 @@
     </button>
 
     <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
@@ -17,7 +17,11 @@
                 </button>
             </div>
         </div>
-    </form>
+    </form> -->
+
+    <h3 class="mr-2 d-none d-lg-inline text-gray-600 small text-center">
+        <i class="fas fa-calendar-alt"></i> {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
+    </h3>
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">

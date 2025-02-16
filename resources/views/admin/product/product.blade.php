@@ -7,14 +7,14 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Produk</h1>
-        <a href="{{route('product.addproduct')}}" class="btn btn-primary btn-sm">
+        <a href="{{route('product.addproduct')}}" class="btn btn-primary btn-sm px-5 py-2">
             Tambah
         </a>
     </div>
     @if ($products->count() > 0)
     <div class="card shadow">
         <div class="card-body">
-            <table class="table custom-table">
+            <table class="table ">
                 <thead class="thead-light">
                     <tr>
                         <th>No</th>
@@ -94,7 +94,9 @@
     @else
     <!-- Tampilan ketika tidak ada produk -->
     <div class="card shadow">
-        <div class="card-body text-center py-5">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
+
+            <dotlottie-player src="https://lottie.host/bde8d481-4caf-4f4b-841f-879c5b5ae12e/8yrDucbsbm.lottie" class="text-center" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
             <h5 class="text-gray-500">Tidak ada data produk.</h5>
             <a href="{{route('product.addproduct')}}" class="btn btn-primary mt-3">
                 Tambah Produk
@@ -140,55 +142,20 @@
 @endsection
 
 
-@push('styles')
-<style>
-    /* Hilangkan garis vertikal */
-    .custom-table th,
-    .custom-table td {
-        vertical-align: middle !important;
-        text-align: center;
-    }
 
-    /* Tambahkan garis horizontal di header */
-    .custom-table thead th {
-        border-bottom: 2px solid #dee2e6 !important;
-    }
-
-    /* Tambahkan garis horizontal di setiap baris */
-    .custom-table tbody tr {
-        border-bottom: 1px solid #dee2e6 !important;
-    }
-
-    /* Pagination Styling */
-    .pagination .page-item .page-link {
-        color: #007bff;
-        border: 1px solid #dee2e6;
-        padding: 8px 12px;
-        margin: 0 2px;
-        border-radius: 5px;
-    }
-
-    .pagination .page-item.active .page-link {
-        background-color: #007bff;
-        color: white;
-        border-color: #007bff;
-    }
-
-    .pagination .page-item.disabled .page-link {
-        color: #6c757d;
-        background-color: #e9ecef;
-        border-color: #dee2e6;
-    }
-
-    .pagination .page-item .page-link:hover {
-        background-color: #0056b3;
-        color: white;
-        border-color: #0056b3;
-    }
-</style>
-@endpush
 
 @push('scripts')
+<script>
+    $(document).ready(function() {
+        $('.table').DataTable({
+            "paging": false, // Hilangkan pagination
+            "info": false, // Hilangkan "Showing 1 to 2 of 2 entries"
+            "lengthChange": false, // Hilangkan dropdown "Show entries"
+            "ordering": true, // Tetap aktifkan sorting
+            "searching": true // Tetap aktifkan pencarian
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
         $('.edit-btn').click(function() {

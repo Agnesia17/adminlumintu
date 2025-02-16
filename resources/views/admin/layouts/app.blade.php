@@ -42,14 +42,18 @@
     @include('admin.partials.modals.logout')
 
     <!-- Scripts -->
-
     <script src="{{asset('sbadmin/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('sbadmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
     <script src="{{asset('sbadmin/js/sb-admin-2.min.js')}}"></script>
+    <script src="{{asset('sbadmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('sbadmin/vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('sbadmin/js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('sbadmin/js/demo/chart-pie-demo.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     @stack('scripts')
 </body>
 

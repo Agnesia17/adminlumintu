@@ -194,13 +194,6 @@
             </tr>
         </thead>
     </table>
-
-    <!-- <div class="total-row">
-        <div class="total-label">TOTAL</div>
-        <div class="total-amount">Rp {{ number_format($pembelian->total, 2, ',', '.') }}</div>
-        <div class="clear"></div>
-    </div> -->
-
     <div class="signature-section">
         <div class="signature-left">
             <p>Dibuat oleh,</p>
