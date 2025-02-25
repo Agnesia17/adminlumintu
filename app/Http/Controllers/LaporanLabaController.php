@@ -18,7 +18,7 @@ class LaporanLabaController extends Controller
         // });
         // return view('admin.Laporan.laba', compact('laporanLaba', 'totalLabaKeseluruhan'));
 
-        //part2
+
         $baseQuery = LaporanPenjualan::with('product');
         $filteredQuery = clone $baseQuery;
 

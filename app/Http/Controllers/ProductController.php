@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\SuratTugas;
+use Carbon\Carbon;
 
 class ProductController extends Controller
 {
@@ -13,6 +15,7 @@ class ProductController extends Controller
     {
         // Mengambil semua data produk
         $products = Product::paginate(10);
+
 
         // Mengirim data ke view
         return view('admin.product.product', compact('products'));
@@ -30,6 +33,10 @@ class ProductController extends Controller
             'harga_beli' => 'required|numeric',
             'harga_jual' => 'required|numeric',
         ]);
+
+        if ($request->harga_beli > $request->harga_jual) {
+            return redirect()->back()->with('error', 'Harga beli tidak boleh lebih tinggi dari harga jual');
+        }
 
         Product::create([
             'nama_produk' => $request->nama_produk,

@@ -25,3 +25,20 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Berhasil!',
+            text: '{{ session("error") }}',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        @endif
+
+    });
+</script>
+@endpush

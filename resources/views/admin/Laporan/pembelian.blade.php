@@ -6,10 +6,75 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Laporan Pembelian</h1>
-        <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-primary btn-sm px-5 py-2">
-            Tambah
-        </a>
+        <div>
+            <a href="{{ route('pembelian.add-pembelian') }}" class="btn btn-primary btn-sm px-5 py-2">
+                Tambah
+            </a>
+            <a href="{{ route('pembelian.export') }}" class="btn btn-success btn-sm px-5 py-2">
+                Download
+            </a>
+        </div>
     </div>
+
+
+    <!-- filter card -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Filter Data</h6>
+        </div>
+        <div class="card-body">
+            <form method="GET" action="{{ route('pembelian') }}" class="row">
+                <!-- Date Range Filter -->
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label>Rentang Tanggal:</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" name="start_date" value="{{ request('start_date') }}">
+                            <div class="input-group-append input-group-prepend">
+                                <span class="input-group-text">sampai</span>
+                            </div>
+                            <input type="date" class="form-control" name="end_date" value="{{ request('end_date') }}">
+                        </div>
+                    </div>
+                </div>
+                <!-- Month and Year Filter -->
+                <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                        <label>Bulan dan Tahun:</label>
+                        <div class="input-group">
+                            <select name="month" class="form-control">
+                                <option value="">Pilih Bulan</option>
+                                @foreach(range(1, 12) as $month)
+                                <option value="{{ $month }}" {{ request('month') == $month ? 'selected' : '' }}>
+                                    {{ date('F', mktime(0, 0, 0, $month, 1)) }}
+                                </option>
+                                @endforeach
+                            </select>
+                            <select name="year" class="form-control">
+                                <option value="">Pilih Tahun</option>
+                                @foreach($years as $year)
+                                <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                                    {{ $year }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-primary mr-2">Filter</button>
+                            <a href="{{ route('pembelian') }}" class="btn btn-secondary">Reset</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end filter card -->
 
     @if ($laporanPembelian->count() > 0)
     <div class="card shadow">

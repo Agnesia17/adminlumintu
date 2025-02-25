@@ -4,9 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaporanLabaController;
 use App\Http\Controllers\LaporanPembelianController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SuratTugasController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::get('/', function () {
@@ -47,14 +49,18 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+
 
     Route::get('/penjualan', function () {
         return view('admin.Laporan.penjualan');
     })->name('penjualan');
 
+    Route::get('/profil', function () {
+        return view('admin.profil');
+    })->name('profil');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/chart-data', [DashboardController::class, 'getChartData'])->name('dashboard.chart-data');
 
     Route::get('/product', [ProductController::class, 'index'])->name('product');
     Route::post('/product', [ProductController::class, 'store'])->name('product.store');
@@ -64,12 +70,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/pembelian', [LaporanPembelianController::class, 'index'])->name('pembelian');
     Route::post('/pembelian', [LaporanPembelianController::class, 'store'])->name('pembelian.store');
+    Route::get('pembelian/export', [LaporanPembelianController::class, 'export'])->name('pembelian.export');
     Route::get('/pembelian/add-pembelian', [LaporanPembelianController::class, 'create'])->name('pembelian.add-pembelian');
     Route::get('/pembelian/preview/{id}', [LaporanPembelianController::class, 'downloadNota'])->name('pembelian.preview');
     Route::get('/pembelian/download/{id}', [LaporanPembelianController::class, 'downloadNotaFile'])->name('pembelian.download');
 
     Route::get('/laba', [LaporanLabaController::class, 'index'])->name('laba');
     Route::get('/laba/export', [LaporanLabaController::class, 'export'])->name('laba.export');
+
+    Route::get('/surat-tugas', [SuratTugasController::class, 'index'])->name('surat-tugas');
+    Route::post('/surat-tugas', [SuratTugasController::class, 'store'])->name('surat-tugas.store');
+    Route::get('/surat-tugas/add-surat', [SuratTugasController::class, 'create'])->name('surat-tugas.add-surat');
+    Route::get('/surat-tugas/preview/{id}', [SuratTugasController::class, 'preview'])->name('surat-tugas.preview');
+    Route::get('/surat-tugas/download/{id}', [SuratTugasController::class, 'download'])->name('surat-tugas.download');
 
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

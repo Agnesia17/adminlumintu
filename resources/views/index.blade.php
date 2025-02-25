@@ -9,12 +9,11 @@
     <title>CV LUMINTU</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{asset('landingpage/assets/favicon.ico')}}" />
-    <!-- Font Awesome icons (free version)-->
+    <!-- AOS CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{asset('landingpage/css/styles.css')}}" rel="stylesheet" />
 </head>
 
@@ -22,12 +21,11 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <!-- <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse ms-auto" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#partner">Partner</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
@@ -39,12 +37,10 @@
                             <span class="px-3 py-2 rounded bg-primary text-white fw-bold">Login</span>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
 
     <header id="carouselHeader" class="carousel slide masthead" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -76,12 +72,12 @@
     <!-- partner-->
     <section class="page-section" id="partner">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up">
                 <h2 class="section-heading text-uppercase">Partner</h2>
                 <h3 class="section-subheading text-muted">CV Lumintu Energi Persada telah bekerjasama dengan :</h3>
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <img src="{{asset('landingpage/assets/img/partner/pabrik.jpg')}}" class="custom-icon">
@@ -89,7 +85,7 @@
                     <h4 class="my-3">Industri Dalam Negeri</h4>
                     <p class="text-muted">Kami menyediakan biodiesel berkualitas tinggi yang membantu industri mengurangi ketergantungan pada bahan bakar fosil, menekan biaya operasional, dan memenuhi standar energi hijau.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <img src="{{asset('landingpage/assets/img/partner/pabrik genteng.jpg')}}" class="custom-icon">
@@ -97,7 +93,7 @@
                     <h4 class="my-3">UMKM</h4>
                     <p class="text-muted">Biodiesel kami menjadi solusi bahan bakar yang lebih efisien dan ramah lingkungan bagi UMKM, membantu mereka menghemat biaya partnerspabriki dengan harga yang kompetitif.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <img src="{{asset('landingpage/assets/img/partner/pabrik container.jpg')}}" class="custom-icon">
@@ -109,12 +105,12 @@
     <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up">
                 <h2 class="section-heading text-uppercase">Produk</h2>
                 <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan dianntaranya:</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
                     <!-- Produk 1-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -128,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                     <!-- Produk 2-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
@@ -142,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                     <!-- Produk 3-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
@@ -156,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
                     <!-- Produk 4-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
@@ -170,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0" data-aos="zoom-in" data-aos-delay="100">
                     <!-- Produk 5-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
@@ -184,7 +180,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
                     <!-- Produk 6-->
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
@@ -204,12 +200,12 @@
     <!-- About-->
     <section class="page-section" id="about">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up">
                 <h2 class="section-heading text-uppercase">Sejarah Lumintu</h2>
                 <h3 class="section-subheading text-muted">Ayo simak dan lihat perjalanan CV. Lumintu Energi Persada, dari awal berdiri hingga berkembang menjadi produsen biodiesel berkualitas tinggi yang terus berinovasi dan berkomitmen memberikan yang terbaik!🚀</h3>
             </div>
             <ul class="timeline">
-                <li>
+                <li data-aos="fade-right">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('landingpage/assets/img/about/1.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -221,7 +217,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="timeline-inverted">
+                <li class="timeline-inverted" data-aos="fade-left">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('landingpage/assets/img/about/2.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -233,7 +229,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li data-aos="fade-right">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('landingpage/assets/img/about/3.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -245,7 +241,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="timeline-inverted">
+                <li class="timeline-inverted" data-aos="fade-left">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('landingpage/assets/img/about/4.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -259,7 +255,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="timeline-inverted">
+                <li class="timeline-inverted" data-aos="zoom-in" data-aos-delay="100">
                     <div class="timeline-image">
                         <h4>
                             Jadilah bagian dari perjalanan kami!
@@ -273,12 +269,12 @@
     <!-- Team-->
     <section class="page-section bg-light" id="perihal">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up">
                 <h2 class="section-heading text-uppercase">Perihal</h2>
                 <h3 class="section-subheading text-muted">Kami berkomitmen penuh untuk perkembangan berkelanjutan industri baru dan muncul dari energi terbaru, sejalan dengan filosofi ini beberapa komoditas yang kami jual belikan di antaranya:</h3>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <!-- Produk 1-->
                     <div class="perihal-item text-center">
                         <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal1">
@@ -292,7 +288,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <!-- Produk 1-->
                     <div class="perihal-item text-center">
                         <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal2">
@@ -307,7 +303,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <!-- Produk 1-->
                     <div class="perihal-item text-center">
                         <a class="perihal-link" data-bs-toggle="modal" href="#perihalModal3">
@@ -328,16 +324,18 @@
     </section>
     <section class="page-section" id="team">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up">
                 <h2 class="section-heading text-uppercase">MARI BEKERJA SAMA DENGAN KAMI</h2>
-                <h3 class="text-muted-1">CV. LUMINTU ENERGI PERSADA</h3>
-                <p class="text-muted">Pergudangan Minyak Babe Ds. Wonoayu RT.02 RW. 01 (Barat KUD) Kec. Wonoayu Kab. Sidoarjo Jawa Timur</p>
-                <p class="text-muted">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p>
-                <!-- <p class=" text-muted">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p> -->
-                <iframe src="https://www.google.com/maps?q=-7.436373, 112.617804&hl=id&z=15&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <h3 class="text-muted-1" data-aos="fade-up" data-aos-delay="100">CV. LUMINTU ENERGI PERSADA</h3>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="150">Pergudangan Minyak Babe Ds. Wonoayu RT.02 RW. 01 (Barat KUD) Kec. Wonoayu Kab. Sidoarjo Jawa Timur</p>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="200">Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com</p>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <iframe src="https://www.google.com/maps?q=-7.436373, 112.617804&hl=id&z=15&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
+        </div>
     </section>
-
+{{-- 
     <div class="py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -355,7 +353,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- footer -->
     <footer class="footer py-4">
         <div class="container">
@@ -587,15 +585,28 @@
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JS-->
+   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
     <script src="{{asset('landingpage/js/scripts.js')}}"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true,
+          offset: 50,
+          delay: 0
+        });
+        
+        // Refresh AOS when bootstrap carousel slides
+        document.querySelector('#carouselHeader').addEventListener('slide.bs.carousel', function () {
+          setTimeout(function() {
+            AOS.refresh();
+          }, 200);
+        });
+    </script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
-
 </html>

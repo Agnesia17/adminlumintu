@@ -11,18 +11,77 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\LaporanPembelian;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\LaporanPembelianExport;
 
 class LaporanPembelianController extends Controller
 {
-    //
-    public function index()
+
+    public function index(Request $request)
     {
-        $laporanPembelian = LaporanPembelian::paginate(10);
+        $baseQuery = LaporanPembelian::query();
+        $filteredQuery = clone $baseQuery;
+
+        // Terapkan filter jika ada
+        if ($request->filled('start_date') && $request->filled('end_date')) {
+            $baseQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+            $filteredQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+        }
+
+        if ($request->filled('month') && $request->filled('year')) {
+            $baseQuery->whereMonth('tanggal', $request->month)
+                ->whereYear('tanggal', $request->year);
+            $filteredQuery->whereMonth('tanggal', $request->month)
+                ->whereYear('tanggal', $request->year);
+        } elseif ($request->filled('year')) {
+            $baseQuery->whereYear('tanggal', $request->year);
+            $filteredQuery->whereYear('tanggal', $request->year);
+        }
+
+        $laporanPembelian = $baseQuery->paginate(10);
+
         $totalProduk = LaporanPembelian::select('id_product', 'nama_produk')
             ->selectRaw('SUM(jumlah) as total_jumlah')
             ->groupBy('id_product', 'nama_produk')
             ->get();
-        return view('admin.Laporan.pembelian', compact('laporanPembelian', 'totalProduk'));
+
+        $years = LaporanPembelian::selectRaw('YEAR(tanggal) as year')
+            ->distinct()
+            ->orderBy('year', 'desc')
+            ->pluck('year');
+
+        return view('admin.Laporan.pembelian', compact('laporanPembelian', 'totalProduk', 'years'));
+    }
+
+    public function export(Request $request)
+    {
+        $query = LaporanPembelian::query();
+        $filterInfo = [];
+
+        // Terapkan filter yang sama seperti di index
+        if ($request->filled('start_date') && $request->filled('end_date')) {
+            $query->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+            $filterInfo[] = "periode_{$request->start_date}_sampai_{$request->end_date}";
+        }
+
+        if ($request->filled('month') && $request->filled('year')) {
+            $query->whereMonth('tanggal', $request->month)
+                ->whereYear('tanggal', $request->year);
+            $filterInfo[] = "bulan_{$request->month}_{$request->year}";
+        } elseif ($request->filled('year')) {
+            $query->whereYear('tanggal', $request->year);
+            $filterInfo[] = "tahun_{$request->year}";
+        }
+
+        $laporanPembelian = $query->get();
+        $totalPembelian = $laporanPembelian->sum('total');
+
+        // Buat nama file dengan informasi filter
+        $timestamp = now()->format('Y-m-d_H-i-s');
+        $filterText = !empty($filterInfo) ? '_' . implode('_', $filterInfo) : '';
+        $filename = "laporan-pembelian{$filterText}_{$timestamp}.xlsx";
+
+        return Excel::download(new LaporanPembelianExport($laporanPembelian, $totalPembelian), $filename);
     }
 
     public function create()
@@ -44,8 +103,6 @@ class LaporanPembelianController extends Controller
         ]);
 
         $product = Product::findOrFail($request->id_product);
-
-        // Tambah stok setelah pembelian
         $product->stok += $request->jumlah;
         $product->save();
 
