@@ -23,7 +23,7 @@
             <div class="card-body p-0">
                 <div class="row">
                     <div class="col-lg-6 d-flex align-items-center justify-content-center p-4">
-                        <img src="{{asset('sbadmin/img/login.svg')}}" class="img-fluid p-4" alt="Reset Password Image">
+                        <img src="{{asset('sbadmin/img/i-reset.svg')}}" class="img-fluid p-4" alt="Reset Password Image">
                     </div>
                     <div class="col-lg-6">
                         <div class="p-5">
@@ -43,7 +43,7 @@
                                     <input type="password" name="password_confirmation" class="form-control form-control-user"
                                         placeholder="Konfirmasi Password Baru">
                                 </div>
-                                <button type="submit" class="btn btn-warning btn-user btn-block">
+                                <button type="submit" class="btn btn-success btn-user btn-block">
                                     Reset Password
                                 </button>
                             </form>

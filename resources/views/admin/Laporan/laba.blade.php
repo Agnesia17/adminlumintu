@@ -6,7 +6,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Laporan Laba</h1>
-        <a href="{{ route('laba.export', request()->query()) }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a href="{{ route('laba.export', request()->query()) }}" class="d-none d-sm-inline-block btn btn-sm btn-success px-5 py-2 shadow-sm">
             <i class="fas fa-download fa-sm text-white-50"></i> Unduh
         </a>
     </div>
@@ -15,7 +15,7 @@
     @if ($laporanLaba->count() > 0)
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Filter Data</h6>
+            <h6 class="m-0 font-weight-bold text-success">Filter Data</h6>
         </div>
         <div class="card-body">
             <form method="GET" action="{{ route('laba') }}" class="row">
@@ -61,7 +61,7 @@
                     <div class="form-group">
                         <label>&nbsp;</label>
                         <div class="input-group">
-                            <button type="submit" class="btn btn-primary mr-2">Filter</button>
+                            <button type="submit" class="btn btn-success mr-2">Filter</button>
                             <a href="{{ route('laba') }}" class="btn btn-secondary">Reset</a>
                         </div>
                     </div>

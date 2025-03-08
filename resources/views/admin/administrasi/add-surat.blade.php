@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary btn-block py-2">Simpan</button>
+                    <button type="submit" class="btn btn-success btn-block py-2">Simpan</button>
                 </div>
             </form>
         </div>

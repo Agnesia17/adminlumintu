@@ -7,7 +7,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Produk</h1>
-        <a href="{{route('product.addproduct')}}" class="btn btn-primary btn-sm px-5 py-2">
+        <a href="{{route('product.addproduct')}}" class="btn btn-success btn-sm px-5 py-2">
             Tambah
         </a>
     </div>
@@ -34,7 +34,7 @@
                         <td>Rp {{ number_format($product->harga_jual, 0, ',', '.') }},00</td>
                         <td>{{$product->stok}} Kg</td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-primary edit-btn"
+                            <button class="btn btn-sm btn-success edit-btn"
                                 data-id="{{ $product->id }}"
                                 data-nama="{{ $product->nama_produk }}"
                                 data-harga-beli="{{ $product->harga_beli }}"
@@ -132,7 +132,7 @@
                             <label>Harga Jual</label>
                             <input type="number" class="form-control" name="harga_jual" id="edit_harga_jual" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        <button type="submit" class="btn btn-success">Simpan Perubahan</button>
                     </form>
                 </div>
             </div>

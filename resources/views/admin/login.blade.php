@@ -18,15 +18,13 @@
 
 <body class="bg-imgs d-flex align-items-center justify-content-center min-vh-100">
     <div class="container">
-        <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
                 <div class="card o-hidden border-0 shadow-lg">
                     <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-flex align-items-center justify-content-center p-4">
-                                <img src="{{asset('sbadmin/img/login.svg')}}" class="img-fluid p-4" alt="Login Image">
+                                <img src="{{asset('sbadmin/img/i-login.svg')}}" class="img-fluid p-4" alt="Login Image">
                             </div>
 
                             <div class="col-lg-6">
@@ -64,7 +62,7 @@
                                                 <label class="custom-control-label" for="customCheck">Ingat Saya</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-warning btn-user btn-block">
+                                        <button type="submit" class="btn btn-success btn-user btn-block">
                                             Masuk
                                         </button>
                                     </form>
@@ -73,9 +71,9 @@
 
                                         <a class="small" href="{{route('password.request')}}">Lupa Password?</a>
                                     </div>
-                                    <div class="text-center">
+                                    {{-- <div class="text-center">
                                         <a class="small" href="{{route('register')}}">Daftar Akun</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div> <!-- END ROW -->

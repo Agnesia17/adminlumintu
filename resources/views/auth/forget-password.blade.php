@@ -26,7 +26,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-flex align-items-center justify-content-center p-4">
-                                <img src="{{asset('sbadmin/img/login.svg')}}" class="img-fluid p-4" alt="Login Image">
+                                <img src="{{asset('sbadmin/img/i-forget-password.svg')}}" class="img-fluid p-4" alt="Login Image">
                             </div>
 
                             <div class="col-lg-6">
@@ -44,15 +44,12 @@
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <button type="submit" class="btn btn-warning btn-user btn-block">
+                                        <button type="submit" class="btn btn-success btn-user btn-block">
                                             Periksa Email
                                         </button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-
-                                        <a class="small" href="#">Belum Punya Akun? Daftar!</a>
-                                    </div>
+                                    
                                     <div class="text-center">
                                         <a class="small" href="#">Sudah Punya Akun? Login!</a>
                                     </div>

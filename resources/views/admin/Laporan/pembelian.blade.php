@@ -20,7 +20,7 @@
     <!-- filter card -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Filter Data</h6>
+            <h6 class="m-0 font-weight-bold text-success">Filter Data</h6>
         </div>
         <div class="card-body">
             <form method="GET" action="{{ route('pembelian') }}" class="row">
@@ -66,7 +66,7 @@
                     <div class="form-group">
                         <label>&nbsp;</label>
                         <div class="input-group">
-                            <button type="submit" class="btn btn-primary mr-2">Filter</button>
+                            <button type="submit" class="btn btn-success mr-2">Filter</button>
                             <a href="{{ route('pembelian') }}" class="btn btn-secondary">Reset</a>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                             <a href="{{ route('pembelian.preview', $pembelian->id) }}" class="btn btn-sm btn-info" target="_blank">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="{{ route('pembelian.download', $pembelian->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('pembelian.download', $pembelian->id) }}" class="btn btn-sm btn-success">
                                 <i class="fas fa-download"></i>
                             </a>
                             <a href="#" class="btn btn-sm btn-danger">

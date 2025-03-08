@@ -3,6 +3,24 @@
 
 <head>
     @include('admin.layouts.header')
+    <style>
+
+        .page-item.active .page-link {
+            background-color: #1cc88a !important;
+            border-color: #1cc88a !important;
+            color: white !important;
+        }
+
+        .page-link {
+            color: #1cc88a; 
+        }
+
+        .page-link:hover {
+            color: #146c43; 
+        }
+
+    </style>
+
 </head>
 
 <body id="page-top">

@@ -79,6 +79,7 @@ class AuthController extends Controller
                 return redirect()->route('verification.notice')
                     ->with('success', 'Silakan Periksa Email untuk verifikasi akun, supaya dapat segera digunakan');
             }
+            return redirect()->route('login')->with('success', 'Password berhasil direset. Silakan login dengan password baru Anda.');
         }
 
         return back()->withErrors(['email' => __($status)]);

@@ -40,7 +40,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="rounded-3 p-3 bg-primary">
+                        <div class="rounded-3 p-3 bg-success">
                             <i class="fas fa-dollar-sign text-white fa-lg"></i>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
 
         <!-- News Card -->
         <div class="col-xl-3 col-md-6">
-            <div class="card border-0 h-100 shadow-sm"">
+            <div class="card border-0 h-100 shadow-sm">
                 <div class=" card-body d-flex flex-column justify-content-between p-4">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
@@ -128,7 +128,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="rounded-3 p-3 bg-warning">
+                    <div class="rounded-3 p-3 bg-success">
                         <i class="fas fa-folder-open text-white fa-lg"></i>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="rounded-3 p-3 bg-warning">
+                    <div class="rounded-3 p-3 bg-success">
                         <i class="fas fa-folder-open text-white fa-lg"></i>
                     </div>
                 </div>

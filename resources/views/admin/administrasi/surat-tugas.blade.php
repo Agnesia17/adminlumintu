@@ -6,7 +6,7 @@
     
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Surat Tugas</h1>
-        <a href="{{route('surat-tugas.add-surat')}}" class="btn btn-primary btn-sm px-5 py-2">
+        <a href="{{route('surat-tugas.add-surat')}}" class="btn btn-success btn-sm px-5 py-2">
             Tambah
         </a>
     </div>
@@ -36,7 +36,7 @@
             <a  href="{{ route('surat-tugas.preview', $letter->id) }}" target="_blank" class="btn btn-sm btn-info">
                 <i class="fas fa-eye"></i>
             </a>
-            <a href="{{ route('surat-tugas.download', $letter->id) }}" class="btn btn-sm btn-primary">
+            <a href="{{ route('surat-tugas.download', $letter->id) }}" class="btn btn-sm btn-success">
                 <i class="fas fa-download"></i>
             </a>
         </td>
@@ -61,7 +61,7 @@
                         <!-- Nomor Halaman -->
                         @for ($i = 1; $i <= $letters->lastPage(); $i++)
                             <li class="page-item {{ $letters->currentPage() == $i ? 'active' : '' }}">
-                                <a class="page-link" href="{{ $letters->url($i) }}">{{ $i }}</a>
+                                <a class="page-link {{ $letters->currentPage() != $i ? 'text-success' : '' }}" href="{{ $letters->url($i) }}">{{ $i }}</a>
                             </li>
                             @endfor
                             <!-- Tombol Next -->
