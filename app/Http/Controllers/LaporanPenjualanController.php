@@ -2,40 +2,152 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\LaporanPenjualan;
 use App\Http\Controllers\Controller;
+use App\Exports\LaporanPenjualanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanPenjualanController extends Controller
 {
-    public function store(Request $request)
+   
+    public function index(Request $request)
     {
-        $request->validate([
-            'id_product' => 'required|exists:product,id',
-            'jumlah' => 'required|integer|min:1',
-        ]);
+        $baseQuery = LaporanPenjualan::query();
+        $filteredQuery = clone $baseQuery;
 
-        $product = Product::findOrFail($request->id_product);
-
-        if ($request->jumlah > $product->stok) {
-            return back()->with('error', 'Stok tidak mencukupi untuk penjualan ini.');
+        // Terapkan filter jika ada
+        if ($request->filled('start_date') && $request->filled('end_date')) {
+            $baseQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+            $filteredQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
         }
 
-        // Kurangi stok setelah penjualan
+        if ($request->filled('month') && $request->filled('year')) {
+            $baseQuery->whereMonth('tanggal', $request->month)
+                ->whereYear('tanggal', $request->year);
+            $filteredQuery->whereMonth('tanggal', $request->month)
+                ->whereYear('tanggal', $request->year);
+        } elseif ($request->filled('year')) {
+            $baseQuery->whereYear('tanggal', $request->year);
+            $filteredQuery->whereYear('tanggal', $request->year);
+        }
+
+        $laporanPenjualan = $baseQuery->paginate(10);
+
+        $totalProduk = LaporanPenjualan::select('id_product', 'nama_produk')
+            ->selectRaw('SUM(jumlah) as total_jumlah')
+            ->groupBy('id_product', 'nama_produk')
+            ->get();
+
+        $years = LaporanPenjualan::selectRaw('YEAR(tanggal) as year')
+            ->distinct()
+            ->orderBy('year', 'desc')
+            ->pluck('year');
+
+        return view('admin.Laporan.penjualan', compact('laporanPenjualan', 'totalProduk', 'years'));
+    }
+    
+    public function create()
+    {
+        $products = Product::all();
+        return view('admin.Laporan.add-penjualan', compact('products'));
+    }
+
+    public function export(Request $request)
+{
+    $query = LaporanPenjualan::query();
+    $filterInfo = [];
+
+    // Terapkan filter yang sama seperti di index
+    if ($request->filled('start_date') && $request->filled('end_date')) {
+        $query->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+        $filterInfo[] = "periode_{$request->start_date}_sampai_{$request->end_date}";
+    }
+
+    if ($request->filled('month') && $request->filled('year')) {
+        $query->whereMonth('tanggal', $request->month)
+            ->whereYear('tanggal', $request->year);
+        $filterInfo[] = "bulan_{$request->month}_{$request->year}";
+    } elseif ($request->filled('year')) {
+        $query->whereYear('tanggal', $request->year);
+        $filterInfo[] = "tahun_{$request->year}";
+    }
+
+    $laporanPenjualan = $query->get();
+    $totalPenjualan = $laporanPenjualan->sum('total');
+
+    // Buat nama file dengan informasi filter
+    $timestamp = now()->format('Y-m-d_H-i-s');
+    $filterText = !empty($filterInfo) ? '_' . implode('_', $filterInfo) : '';
+    $filename = "laporan-penjualan{$filterText}_{$timestamp}.xlsx";
+
+    return Excel::download(new LaporanPenjualanExport($laporanPenjualan, $totalPenjualan), $filename);
+}
+
+    public function store(Request $request){
+
+        $validateData = $request->validate([
+            'tanggal' => 'required|date',
+            'nama_pembeli' => 'required|string',
+            'nama_produk' => 'required|string',
+            'harga_jual' => 'required|numeric',
+            'jumlah' => 'required|numeric',
+            'id_product' => 'required|numeric'
+        ]);
+
+        // Check if product has enough stock
+        $product = Product::findOrFail($request->id_product);
+            
+        if ($product->stok < $request->jumlah) {
+            return redirect()->back()->with('error', 'Stok tidak mencukupi. Stok tersedia: ' . $product->stok)->withInput();
+        }
+        
+        // Reduce stock
         $product->stok -= $request->jumlah;
         $product->save();
 
+        // Calculate total
+        $total = $request->harga_jual * $request->jumlah;
+
         LaporanPenjualan::create([
-            'tanggal' => now(),
+            'tanggal' => $request->tanggal,
             'nama_pembeli' => $request->nama_pembeli,
-            'nama_produk' => $product->nama_produk,
-            'harga_jual' => $product->harga_jual,
+            'nama_produk' => $request->nama_produk,
+            'harga_jual' => $request->harga_jual,
+            'harga_beli' => $product->harga_beli,
             'jumlah' => $request->jumlah,
-            'total' => $request->jumlah * $product->harga_jual,
-            'id_product' => $request->id_product,
+            'total' => $total,
+            'id_product' => $request->id_product
         ]);
 
-        return redirect()->back()->with('success', 'Penjualan berhasil!');
+        return redirect()->route('penjualan')->with('success', 'Data penjualan berhasil ditambahkan');
+
     }
+
+    public function previewNota($id)
+    {
+        $penjualan = LaporanPenjualan::findOrFail($id);
+        $tanggal = Carbon::parse($penjualan->tanggal)->format('d/m/Y');
+        $notaNumber = 'NOTA-' . str_pad($penjualan->id, 5, '0', STR_PAD_LEFT);
+
+        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+        $imageData = base64_encode(file_get_contents($imagePath));
+
+        $pdf = PDF::loadView('admin.Laporan.nota-penjualan', [
+            'penjualan' => $penjualan,
+            'tanggal' => $tanggal,
+            'notaNumber' => $notaNumber,
+            'logoImage' => $imageData
+        ]);
+
+        $pdf->setPaper('A4', 'portrait');
+
+        return $pdf->stream('nota-penjualan-' . $notaNumber . '.pdf', [
+            'Attachment' => false
+        ]);
+    }
+
 }
