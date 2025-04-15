@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaporanLabaController;
 use App\Http\Controllers\LaporanPembelianController;
+use App\Http\Controllers\LaporanPenjualanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SuratTugasController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -51,9 +52,6 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
 
-    Route::get('/penjualan', function () {
-        return view('admin.Laporan.penjualan');
-    })->name('penjualan');
 
     Route::get('/profil', function () {
         return view('admin.profil');
@@ -74,6 +72,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/pembelian/add-pembelian', [LaporanPembelianController::class, 'create'])->name('pembelian.add-pembelian');
     Route::get('/pembelian/preview/{id}', [LaporanPembelianController::class, 'downloadNota'])->name('pembelian.preview');
     Route::get('/pembelian/download/{id}', [LaporanPembelianController::class, 'downloadNotaFile'])->name('pembelian.download');
+
+    Route::get('/penjualan', [LaporanPenjualanController::class, 'index'])->name('penjualan'); 
+    Route::get('/penjualan/add-penjualan', [LaporanPenjualanController::class, 'create'])->name('penjualan.add-penjualan'); 
+    Route::post('/penjualan/store', [LaporanPenjualanController::class, 'store'])->name('penjualan.store');
+    Route::get('/penjualan/export', [LaporanPenjualanController::class, 'export'])->name('penjualan.export');
+    Route::get('/penjualan/preview/{id}', [LaporanPenjualanController::class, 'previewNota'])->name('penjualan.preview');
 
     Route::get('/laba', [LaporanLabaController::class, 'index'])->name('laba');
     Route::get('/laba/export', [LaporanLabaController::class, 'export'])->name('laba.export');

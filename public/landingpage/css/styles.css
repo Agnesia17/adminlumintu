@@ -8096,7 +8096,7 @@ textarea.form-control-lg {
 
 .text-muted-1 {
   --bs-text-opacity: 1;
-  color: #ffc800 !important;
+  color: #198754 !important;
 }
 
 .text-black-50 {
@@ -10893,7 +10893,7 @@ p {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #ffc800;
+  color: #198754; 
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   letter-spacing: 0.0625em;
@@ -10909,7 +10909,7 @@ p {
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
+  color: #198754;
 }
 
 @media (min-width: 992px) {
@@ -11044,7 +11044,7 @@ header.masthead {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(255, 200, 0, 0.9);
+  background: rgba(25, 135, 84, 0.9);
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -11125,7 +11125,7 @@ header.masthead {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(255, 200, 0, 0.9);
+  background: rgba(25, 135, 84, 0.9);
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -11205,7 +11205,7 @@ header.masthead {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #ffc800;
+  background-color: #198754;
 }
 .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
   font-size: 10px;

@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('login')}}">
-                            <span class="px-3 py-2 rounded bg-primary text-white fw-bold">Login</span>
+                            <span class="px-3 py-2 rounded bg-success text-white fw-bold">Login</span>
                         </a>
                     </li>
                 </ul>
@@ -65,7 +65,7 @@
         <div class="container carousel-caption text-center">
             <div class="masthead-subheading">Welcome To Office!</div>
             <div class="masthead-heading text-uppercase">CV LUMINTU ENERGI PERSADA</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#partner">Baca Lebih Banyak</a>
+            <a class="btn btn-success btn-xl text-uppercase" href="#partner">Baca Lebih Banyak</a>
         </div>
     </header>
 
@@ -79,7 +79,7 @@
             <div class="row text-center">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-circle fa-stack-2x text-success"></i>
                         <img src="{{asset('landingpage/assets/img/partner/pabrik.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">Industri Dalam Negeri</h4>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-circle fa-stack-2x text-success"></i>
                         <img src="{{asset('landingpage/assets/img/partner/pabrik genteng.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">UMKM</h4>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-circle fa-stack-2x text-success"></i>
                         <img src="{{asset('landingpage/assets/img/partner/pabrik container.jpg')}}" class="custom-icon">
                     </span>
                     <h4 class="my-3">Ekspor Biodisel</h4>
@@ -385,7 +385,7 @@
                                 <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
                                 <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -408,7 +408,7 @@
                                 <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
                                 <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -431,7 +431,7 @@
                                 <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
                                 <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -456,7 +456,7 @@
                                 <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
                                 <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -479,7 +479,7 @@
                                 <p class="item-intro text-muted">PFAD, solusi ramah lingkungan untuk industri sabun, pakan ternak, dan biodiesel!</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmacidoil.jpg')}}" alt="..." />
                                 <p>Produk sampingan dari pemurnian minyak sawit mentah yang mengandung asam lemak tinggi dan digunakan dalam industri sabun, pakan ternak, dan biodiesel.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -503,7 +503,7 @@
                                 <p class="item-intro text-muted">CPO dengan FFA tinggi, pilihan tepat untuk biodiesel dan industri oleokimia!</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/hightacid.jpg')}}" alt="..." />
                                 <p>Minyak sawit mentah dengan kadar asam lemak bebas (FFA) tinggi, biasanya berasal dari buah sawit yang telah mengalami fermentasi atau penundaan dalam pengolahan.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -527,7 +527,7 @@
                                 <p class="item-intro text-muted">Palm Fatty Acid Distillate (PFAD), bahan berkualitas tinggi untuk industri oleokimia, lilin, dan pakan ternak!</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmfatty.jpg')}}" alt="..." />
                                 <p>Produk sampingan dari proses pemurnian minyak sawit yang kaya akan asam lemak dan sering digunakan dalam industri oleokimia, lilin, dan pakan ternak.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -551,7 +551,7 @@
                                 <p class="item-intro text-muted">Palm Kernel Expeller (PKE), sumber pakan ternak berkualitas tinggi dengan kandungan protein tinggi</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmkernel.jpg')}}" alt="..." />
                                 <p>Hasil sampingan dari ekstraksi minyak inti sawit yang digunakan sebagai pakan ternak karena kandungan proteinnya yang tinggi.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>
@@ -575,7 +575,7 @@
                                 <p class="item-intro text-muted">Palm Kernel Shell (PKS), solusi bahan bakar biomassa berkualitas tinggi dengan nilai kalori tinggi!</p>
                                 <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/palmkernelshell.jpg')}}" alt="..." />
                                 <p>Palm Kernel Shell (PKS) adalah cangkang biji kelapa sawit yang keras dan memiliki nilai kalori tinggi, menjadikannya pilihan ideal sebagai bahan bakar biomassa yang efisien, ramah lingkungan, dan berkelanjutan untuk berbagai industri.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
                             </div>

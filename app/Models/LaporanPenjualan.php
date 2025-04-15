@@ -15,6 +15,7 @@ class LaporanPenjualan extends Model
         'tanggal',
         'nama_pembeli',
         'nama_produk',
+        'harga_beli',
         'harga_jual',
         'jumlah',
         'total',

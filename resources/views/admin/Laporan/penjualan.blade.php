@@ -7,8 +7,79 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+ <!-- Page Heading -->
+ <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Laporan Penjualan</h1>
+        <div>
+            <a href="{{route('penjualan.add-penjualan')}}" class="btn btn-primary btn-sm px-5 py-2">
+                Tambah
+            </a>
+            <a href="{{ route('penjualan.export') }}" class="btn btn-success btn-sm px-5 py-2">
+                Download
+            </a>
+        </div>
+    </div>
+
+<!-- filter card -->
+<div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-success">Filter Data</h6>
+        </div>
+        <div class="card-body">
+            <form method="GET" action="{{ route('penjualan') }}" class="row">
+                <!-- Date Range Filter -->
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label>Rentang Tanggal:</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" name="start_date" value="{{ request('start_date') }}">
+                            <div class="input-group-append input-group-prepend">
+                                <span class="input-group-text">sampai</span>
+                            </div>
+                            <input type="date" class="form-control" name="end_date" value="{{ request('end_date') }}">
+                        </div>
+                    </div>
+                </div>
+                <!-- Month and Year Filter -->
+                <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                        <label>Bulan dan Tahun:</label>
+                        <div class="input-group">
+                            <select name="month" class="form-control">
+                                <option value="">Pilih Bulan</option>
+                                @foreach(range(1, 12) as $month)
+                                <option value="{{ $month }}" {{ request('month') == $month ? 'selected' : '' }}>
+                                    {{ date('F', mktime(0, 0, 0, $month, 1)) }}
+                                </option>
+                                @endforeach
+                            </select>
+                            <select name="year" class="form-control">
+                                <option value="">Pilih Tahun</option>
+                                @foreach($years as $year)
+                                <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                                    {{ $year }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-success mr-2">Filter</button>
+                            <a href="{{ route('penjualan') }}" class="btn btn-secondary">Reset</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end filter card -->
+
+
 
     <div class="card shadow">
         <div class="card-body">
@@ -17,33 +88,41 @@
                     <tr>
                         <th>No</th>
                         <th>Tanggal</th>
+                        <th>Nama Pembeli</th>
                         <th>Nama Produk</th>
-                        <th>Harga Beli</th>
                         <th>Harga Jual</th>
                         <th>Jumlah/Kg</th>
-                        <th>Laba Bersih</th>
+                        <th>Total</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                @php $total = 0; @endphp
+                @foreach ($laporanPenjualan as $index => $penjualan)
+                @php
+                $total=($penjualan->harga_jual*$penjualan->jumlah);
+                @endphp
                     <tr>
-                        <td>aa</td>
-                        <td>aa</td>
-                        <td>aa</td>
-                        <td> Rp 00</td>
-                        <td> Rp00</td>
-                        <td>aaa</td>
-                        <td> Rp00</td>
+                        <td>{{$laporanPenjualan->firstItem() + $index}}</td>
+                        <td>{{$penjualan->tanggal}}</td>
+                        <td>{{$penjualan->nama_pembeli}}</td>
+                        <td>{{$penjualan->nama_produk}}</td>
+                        <td> Rp {{ number_format($penjualan->harga_jual, 0, ',', '.') }},00</td>
+                        <td>{{$penjualan->jumlah}}</td>
+                        <td>Rp {{ number_format($total, 0, ',', '.') }},00</td>
+                        <td class="text-center">
+                            <a href="{{ route('penjualan.preview', $penjualan->id) }}" class="btn btn-sm btn-info" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-success">
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>aa</td>
-                        <td>aa</td>
-                        <td>aa</td>
-                        <td> Rp 00</td>
-                        <td> Rp00</td>
-                        <td>aaa</td>
-                        <td> Rp00</td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
 
@@ -67,5 +146,14 @@
             "searching": true // Tetap aktifkan pencarian
         });
     });
+    @if(session('success'))
+        Swal.fire({
+            title: 'Sukses!',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    @endif
 </script>
+
 @endpush
