@@ -1,159 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Nota Penjualan - {{$notaNumber}}</title>
     <style>
-           @page {
-            size: 21.5cm 29.7cm;
-            /* Ukuran kertas */
-            margin: 0.5cm;
-            /* Mengurangi margin agar lebih muat */
+        @page {
+            margin: 0cm 0cm;
         }
         body {
+            margin-top: 2cm;
+            margin-left: 2cm;
+            margin-right: 2cm;
+            margin-bottom: 2cm;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
+            font-size: 14px; /* Increased from 12px */
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .header-box {
+            border: 1px solid #000;
+            padding: 6px; /* Slightly larger padding */
+            margin-bottom: 6px;
+            width: 210px;
+            font-size: 13px; /* Specific size for header boxes */
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
         }
-        .header-left {
-            width: 50%;
+        .left-section {
+            float: left;
+            width: 48%;
         }
-        .header-right {
-            width: 50%;
+        .right-section {
+            float: right;
+            width: 48%;
             text-align: right;
-        }
-        .invoice-box {
-            border: 1px solid #ccc;
-            padding: 10px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .logo {
-            max-width: 150px;
         }
         .invoice-title {
             text-align: center;
             font-weight: bold;
-            font-size: 24px;
-            margin: 20px 0;
+            font-size: 22px; /* Increased from 18px */
+            margin: 25px 0;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+        table th {
+            border: 1px solid #000;
+            padding: 7px;
+            font-size: 15px; /* Larger font for headers */
+            background-color: #f9f9f9;
         }
-        th {
-            background-color: #f2f2f2;
-            text-align: left;
+        table td {
+            border: 1px solid #000;
+            padding: 7px;
+            font-size: 14px; /* Consistent with body text */
+        }
+        .footer-signature {
+            margin-top: 60px;
+        }
+        .left-sign {
+            float: left;
+            width: 45%;
+            text-align: center;
+            font-size: 15px; /* Larger font for signatures */
+        }
+        .right-sign {
+            float: right;
+            width: 45%;
+            text-align: center;
+            font-size: 15px; /* Larger font for signatures */
+        }
+        .payment-info {
+            margin-top: 25px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .message-info {
+            margin-top: 25px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .company-name {
+            font-size: 16px; /* Larger font for company name */
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .address-details {
+            font-size: 13px;
+            line-height: 1.4;
         }
         .total-row {
             font-weight: bold;
-        }
-        .payment-info {
-            margin-bottom: 20px;
-        }
-        .signature {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-        }
-        .signature-box {
-            width: 45%;
+            font-size: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-left">
-                <div class="invoice-box">
-                    INV/01/LEP/0001/2025
+    <div class="clearfix">
+        <div class="left-section">
+            <div class="header-box">{{ $notaNumber }}</div>
+            <div class="header-box">{{ $tanggal }}</div>
+            
+            <div style="margin-top: 20px;">
+                <strong style="font-size: 15px;">Tagihan kepada</strong><br>
+                <div style="font-size: 14px; line-height: 1.5; margin-top: 5px;">
+                    {{$penjualan->nama_pembeli}}<br>
+                    {{$penjualan->alamat}}<br>
+                    Telp: {{$penjualan->no_telepon}}
                 </div>
-                <div class="invoice-box">
-                    01 Januari 2025
-                </div>
-                <h3>Tagihan kepada</h3>
-                <p>
-                    Direktur CV. Fish farms & hatcheries<br>
-                    Ngudi Lor RT.03 61351 Kabupaten Mojokerto Jawa Timur<br>
-                    Telp. 0822-09098-0909
-                </p>
-            </div>
-            <div class="header-right">
-                <img src="{{ asset('images/lep-logo.png') }}" alt="LEP Logo" class="logo">
-                <h3>LUMINTU ENERGI PERSADA,CV</h3>
-                <p>
-                    Pergudangan Minyak Babe Ds. Wonoayu RT.02 RW. 01 (Barat KUD)<br>
-                    Kec. Wonoayu Kab. Sidoarjo Jawa Timur<br>
-                    Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com
-                </p>
             </div>
         </div>
-
-        <div class="invoice-title">INVOICE</div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Banyaknya</th>
-                    <th>Nama Barang</th>
-                    <th>Harga</th>
-                    <th>Jumlah</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="total-row">TOTAL</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="payment-info">
-            <p>
-                <strong>Pembayaran ke :</strong><br>
-                Bank BCA a/n SUWARNO<br>
-                0183153436
-            </p>
-            <p>
-                <strong>Pesan :</strong><br>
-                Pembayaran wajib diselesaikan maksimal 10 hari setelah invoice<br>
-                ini dikonfirmasi oleh pihak yang bersangkutan
-            </p>
+        
+        <div class="right-section">
+            @if(!empty($logoImage))
+                <img src="data:image/png;base64,{{ $logoImage }}" width="110">
+            @endif
+            <div class="company-name">LUMINTU ENERGI PERSADA,CV</div>
+            <div class="address-details">
+                Pengelolaan Minyak Daur De Wonosajo RT.02 RW.01 (Barat KLIH)<br>
+                Kec. Wonosajo Kab. Sidoarjo Jawa Timur<br>
+                Telp: 0813-3093-6218 (Bahe Sutarsihni)<br>
+                Email: lumintu.bade@gmail.com
+            </div>
         </div>
-
-        <div class="signature">
-            <div class="signature-box">
-                <p>Dibuat oleh,</p>
-                <br><br><br>
-                <p>( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
-            </div>
-            <div class="signature-box">
-                <p>Tanda terima,</p>
-                <br><br><br>
-                <p>( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
-            </div>
+    </div>
+    
+    <div class="invoice-title">INVOICE</div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Banyaknya</th>
+                <th>Nama Barang</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- Tengah -->
+                <td style="text-align: center;">{{$penjualan->jumlah}}</td>
+                <td style="text-align: center;">{{$penjualan->nama_produk}}</td>
+                
+                <!-- Kanan -->
+                <td style="text-align: right;">{{number_format($penjualan->harga_jual, 2, ',', '.') }}</td>
+                <td style="text-align: right;">{{number_format($penjualan->total, 2, ',', '.')}}</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; font-weight: bold;" class="total-row">TOTAL</td>
+                <td class="total-row" style="text-align: right;">{{number_format($penjualan->total, 2, ',', '.')}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="payment-info">
+        <strong style="font-size: 15px;">Pembayaran ke :</strong><br>
+        Bank BCA a/n SUTARSNO<br>
+        0193151436
+    </div>
+    
+    <div class="message-info">
+        <strong style="font-size: 15px;">Pesan:</strong><br>
+        Pembayaran wajib diselesaikan maksimal 10 hari setelah invoice<br>
+        ini diterbitkan demi pihak yang bersangkutan
+    </div>
+    
+    <div class="footer-signature clearfix">
+        <div class="left-sign">
+            <div>Dibuat oleh,</div>
+            <div style="margin-top: 50px;">( SUWARNO )</div>
+        </div>
+        
+        <div class="right-sign">
+            <div>Tanda terima,</div>
+            <div style="margin-top: 50px;">( {{$penjualan->nama_pembeli}} )</div>
         </div>
     </div>
 </body>

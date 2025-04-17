@@ -83,7 +83,7 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <table class="table">
+            <table class="table custom-table">
                 <thead class="thead-light">
                     <tr>
                         <th>No</th>
@@ -114,18 +114,50 @@
                             <a href="{{ route('penjualan.preview', $penjualan->id) }}" class="btn btn-sm btn-info" target="_blank">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="#" class="btn btn-sm btn-success">
+                            <a href="{{ route('penjualan.download', $penjualan->id) }}" class="btn btn-sm btn-success">
                                 <i class="fas fa-download"></i>
                             </a>
-                            <a href="#" class="btn btn-sm btn-danger">
+                            {{-- <a href="#" class="btn btn-sm btn-danger">
                                 <i class="fas fa-trash"></i>
-                            </a>
+                            </a> --}}
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-
+      <!-- Pagination -->
+      <div class="d-flex  mt-3">
+        <nav>
+            <ul class="pagination">
+                <!-- Tombol Previous -->
+                @if ($laporanPenjualan->onFirstPage())
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo; Kembali</span>
+                </li>
+                @else
+                <li class="page-item">
+                    <a class="page-link" href="{{ $laporanPenjualan->previousPageUrl() }}" rel="prev">&laquo; Kembali</a>
+                </li>
+                @endif
+                <!-- Nomor Halaman -->
+                @for ($i = 1; $i <= $laporanPenjualan->lastPage(); $i++)
+                    <li class="page-item {{ $laporanPenjualan->currentPage() == $i ? 'active' : '' }}">
+                        <a class="page-link" href="{{ $laporanPenjualan->url($i) }}">{{ $i }}</a>
+                    </li>
+                    @endfor
+                    <!-- Tombol Next -->
+                    @if ($laporanPenjualan->hasMorePages())
+                    <li class="page-item">
+                        <a class="page-link" href="{{ $laporanPenjualan->nextPageUrl() }}" rel="next">Lanjut &raquo;</a>
+                    </li>
+                    @else
+                    <li class="page-item disabled">
+                        <span class="page-link">Lanjut &raquo;</span>
+                    </li>
+                    @endif
+            </ul>
+        </nav>
+    </div>
         </div>
     </div>
 
@@ -155,5 +187,4 @@
         });
     @endif
 </script>
-
 @endpush

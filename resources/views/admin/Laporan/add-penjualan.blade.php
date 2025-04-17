@@ -34,6 +34,20 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="col-md-6  mt-2">
+                        <label for="alamat">Alamat</label>
+                        <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" value="{{ old('alamat') }}"  placeholder="masukan alamat" required>
+                        @error('alamat')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-6  mt-2">
+                        <label for="no_telepon">Nomor Telepon</label>
+                        <input type="number" class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon" id="no_telepon" value="{{ old('no_telepon') }}"  placeholder="masukan nomor telepon" required>
+                        @error('no_telepon')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
                     <div class="col-md-6 mt-2">
                         <label for="nama_produk">Nama Produk</label>
@@ -94,6 +108,15 @@
 @endsection
 
 @push('scripts')
+<script>
+    document.getElementById('no_telepon').addEventListener('input', function(){
+        let value = this.value;
+
+        if (value.length > 13) {
+            this.value = value.slice(0,13);
+        }
+    });
+</script>
 <script>
 $(document).ready(function() {
     // Handle product selection

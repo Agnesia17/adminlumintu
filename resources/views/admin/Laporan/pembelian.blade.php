@@ -110,9 +110,9 @@
                             <a href="{{ route('pembelian.download', $pembelian->id) }}" class="btn btn-sm btn-success">
                                 <i class="fas fa-download"></i>
                             </a>
-                            <a href="#" class="btn btn-sm btn-danger">
+                            {{-- <a href="#" class="btn btn-sm btn-danger">
                                 <i class="fas fa-trash"></i>
-                            </a>
+                            </a> --}}
                         </td>
                     </tr>
                     @endforeach

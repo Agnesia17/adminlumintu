@@ -14,6 +14,8 @@ class LaporanPenjualan extends Model
     protected $fillable = [
         'tanggal',
         'nama_pembeli',
+        'alamat',
+        'no_telepon',
         'nama_produk',
         'harga_beli',
         'harga_jual',
@@ -21,6 +23,7 @@ class LaporanPenjualan extends Model
         'total',
         'id_product'
     ];
+
 
     public function product()
     {

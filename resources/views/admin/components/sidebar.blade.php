@@ -117,11 +117,11 @@
 
             <span>Laporan</span>
         </a>
-        <div id="collapseTwo" class="collapse {{ request()->routeIs('pembelian')  || request()->routeIs('pembelian.add-pembelian') || request()->routeIs('penjualan') || request()->routeIs('laba') ? 'show' : '' }}">
+        <div id="collapseTwo" class="collapse {{ request()->routeIs('pembelian')  || request()->routeIs('pembelian.add-pembelian') || request()->routeIs('penjualan') || request()->routeIs('penjualan.add-penjualan')|| request()->routeIs('laba') ? 'show' : '' }}">
             <div class="bg-light bg-opacity-50 py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Laporan:</h6>
                 <a class="collapse-item {{ request()->routeIs('pembelian') ||  request()->routeIs('pembelian.add-pembelian') ? 'text-success' : '' }}" href="{{ route('pembelian') }}">Laporan Pembelian</a>
-                <a class="collapse-item {{ request()->routeIs('penjualan') ? 'text-success' : '' }}" href="{{ route('penjualan') }}">Laporan Penjualan</a>
+                <a class="collapse-item {{ request()->routeIs('penjualan') || request()->routeIs('penjualan.add-penjualan') ? 'text-success' : '' }}" href="{{ route('penjualan') }}">Laporan Penjualan</a>
                 <a class="collapse-item {{ request()->routeIs('laba') ? 'text-success' : '' }}" href="{{ route('laba') }}">Laporan Laba</a>
             </div>
         </div>
