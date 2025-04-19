@@ -128,18 +128,18 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item {{request()->routeIs('surat-tugas') || request()->routeIs('surat-tugas.add-surat') ? 'active' : '' }}">
-        <a class="nav-link collapsed {{ request()->routeIs('surat-tugas') || request()->routeIs('surat-tugas.add-surat')  ? 'text-success' : '' }}" href="#" data-toggle="collapse" data-target="#collapseTree"
+    <li class="nav-item {{request()->routeIs('surat-tugas') || request()->routeIs('surat-jalan') || request()->routeIs('surat-tugas.add-surat') || request()->routeIs('surat-jalan.add-surat-jalan') ? 'active' : '' }}">
+        <a class="nav-link collapsed {{ request()->routeIs('surat-tugas') || request()->routeIs('surat-jalan') || request()->routeIs('surat-tugas.add-surat') || request()->routeIs('surat-jalan.add-surat-jalan')  ? 'text-success' : '' }}" href="#" data-toggle="collapse" data-target="#collapseTree"
             aria-expanded="false"  aria-controls="collapseTree">
-            <i class="fas fa-fw fa-envelope {{ request()->routeIs('surat-tugas') || request()->routeIs('surat-tugas.add-surat')  ? 'text-success' : '' }}"></i>
+            <i class="fas fa-fw fa-envelope {{ request()->routeIs('surat-tugas') || request()->routeIs('surat-jalan') ||  request()->routeIs('surat-tugas.add-surat') || request()->routeIs('surat-jalan.add-surat-jalan')  ? 'text-success' : '' }}"></i>
             <span>Administrasi</span>
         </a>
-        <div id="collapseTree" class="collapse {{request()->routeIs('surat-tugas') || request()->routeIs('surat-tugas.add-surat') ? 'show' : '' }}" 
+        <div id="collapseTree" class="collapse {{request()->routeIs('surat-tugas') || request()->routeIs('surat-jalan') || request()->routeIs('surat-tugas.add-surat') || request()->routeIs('surat-jalan.add-surat-jalan') ? 'show' : '' }}" 
             data-parent="#accordionSidebar">
             <div class="bg-light bg-opacity-50 py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Administrasi:</h6>
                 <a class="collapse-item {{request()->routeIs('surat-tugas') || request()->routeIs('surat-tugas.add-surat') ? 'text-success' : '' }}" href="{{route('surat-tugas')}}">Surat Tugas</a>
-                <a class="collapse-item" href="utilities-border.html">Surat Jalan</a>
+                <a class="collapse-item {{request()->routeIs('surat-jalan') || request()->routeIs('surat-jalan.add-surat-jalan') ? 'text-success' : ''}}"  href="{{route('surat-jalan')}}">Surat Jalan</a>
             </div>
         </div>
     </li>

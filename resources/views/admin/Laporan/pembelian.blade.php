@@ -181,5 +181,13 @@
             "searching": true // Tetap aktifkan pencarian
         });
     });
+    @if(session('success'))
+        Swal.fire({
+            title: 'Sukses!',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    @endif
 </script>
 @endpush

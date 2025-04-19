@@ -9,6 +9,8 @@ use App\Http\Controllers\LaporanLabaController;
 use App\Http\Controllers\LaporanPembelianController;
 use App\Http\Controllers\LaporanPenjualanController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SuratJalanController;
 use App\Http\Controllers\SuratTugasController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -52,11 +54,6 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
 
-
-    Route::get('/profil', function () {
-        return view('admin.profil');
-    })->name('profil');
-
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/chart-data', [DashboardController::class, 'getChartData'])->name('dashboard.chart-data');
 
@@ -88,7 +85,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/surat-tugas/add-surat', [SuratTugasController::class, 'create'])->name('surat-tugas.add-surat');
     Route::get('/surat-tugas/preview/{id}', [SuratTugasController::class, 'preview'])->name('surat-tugas.preview');
     Route::get('/surat-tugas/download/{id}', [SuratTugasController::class, 'download'])->name('surat-tugas.download');
+    Route::put('/surat-tugas/update/{id}', [SuratTugasController::class, 'update'])->name('surat-tugas.update');
 
+    Route::get('/surat-jalan', [SuratJalanController::class, 'index'])->name('surat-jalan');
+    Route::post('/surat-jalan', [SuratJalanController::class, 'store'])->name('surat-jalan.store');
+    Route::get('/surat-jalan/add-surat-jalan', [SuratJalanController::class, 'create'])->name('surat-jalan.add-surat-jalan');
+    Route::get('/surat-jalan/preview/{id}', [SuratJalanController::class, 'preview'])->name('surat-jalan.preview');
+    Route::get('/surat-jalan/download/{id}', [SuratJalanController::class, 'download'])->name('surat-jalan.download');
+    Route::put('/surat-jalan/update/{id}', [SuratJalanController::class, 'update'])->name('surat-jalan.update');
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('admin.profile.update');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

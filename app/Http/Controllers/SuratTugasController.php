@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Exception;
 
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Profile;
 use App\Models\SuratTugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 
 class SuratTugasController extends Controller
@@ -78,14 +79,15 @@ class SuratTugasController extends Controller
         // Format tanggal
         $tanggal = Carbon::parse($suratTugas->tanggal)->format('d F Y');
 
-        // Get logo image
-        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+        $dataPerusahaan  = Profile::find(1);
+        $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $logoImage = base64_encode(file_get_contents($imagePath));
 
         $pdf = PDF::loadView('admin.administrasi.view-surat-tugas', [
             'suratTugas' => $suratTugas,
             'tanggal' => $tanggal,
-            'logoImage' => $logoImage
+            'logoImage' => $logoImage,
+            'data' => $dataPerusahaan
         ]);
 
         $pdf->setPaper('A4', 'portrait');
@@ -104,14 +106,15 @@ class SuratTugasController extends Controller
         // Format tanggal
         $tanggal = Carbon::parse($suratTugas->tanggal)->format('d F Y');
 
-        // Get logo image
-        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+        $dataPerusahaan  = Profile::find(1);
+        $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $logoImage = base64_encode(file_get_contents($imagePath));
 
         $pdf = PDF::loadView('admin.administrasi.view-surat-tugas', [
             'suratTugas' => $suratTugas,
             'tanggal' => $tanggal,
-            'logoImage' => $logoImage
+            'logoImage' => $logoImage,
+            'data' => $dataPerusahaan
         ]);
 
         $pdf->setPaper('A4', 'portrait');
@@ -119,6 +122,31 @@ class SuratTugasController extends Controller
         $cleanFileName = str_replace(['/', '\\'], '-', $suratTugas->no_surat);
 
         // Force download
-        return $pdf->download('nota-pembelian-' . $cleanFileName . '.pdf');
+        return $pdf->download('surat-tugas-' . $cleanFileName . '.pdf');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validate =  $request->validate([
+            'nama' => 'required|string|max:255',
+            'no_ktp' => 'required|numeric',
+            'alamat' => 'required|string',
+            'masa' => 'required|date',
+            'tanggal' => 'required|date'
+        ]);
+
+        $tanggalFormatted = date('Y-m-d', strtotime($validate['tanggal']));
+        $masaFormatted = \Carbon\Carbon::parse($tanggalFormatted)->addMonths(6)->format('Y-m-d');
+
+        $suratTugas = SuratTugas::findOrFail($id);
+        $suratTugas->update([
+            'nama' => $request->nama,
+            'no_ktp' => $request->no_ktp,
+            'alamat' => $request->alamat,
+            'tanggal' => $tanggalFormatted,
+            'masa' => $masaFormatted
+        ]);
+
+        return redirect()->route('surat-tugas')->with('success', 'Data Surat Tugas Berhasil diperbarui');
     }
 }

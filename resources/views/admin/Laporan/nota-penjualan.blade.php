@@ -117,12 +117,12 @@
             @if(!empty($logoImage))
                 <img src="data:image/png;base64,{{ $logoImage }}" width="110">
             @endif
-            <div class="company-name">LUMINTU ENERGI PERSADA,CV</div>
+            <div class="company-name">{{$data->company}}</div>
             <div class="address-details">
-                Pengelolaan Minyak Daur De Wonosajo RT.02 RW.01 (Barat KLIH)<br>
-                Kec. Wonosajo Kab. Sidoarjo Jawa Timur<br>
-                Telp: 0813-3093-6218 (Bahe Sutarsihni)<br>
-                Email: lumintu.bade@gmail.com
+                {{$data->alamat_company}}<br>
+              
+                Telp: {{$data->no_telp}} ({{$data->owner}})<br>
+                Email: {{$data->email_company}}
             </div>
         </div>
     </div>
@@ -157,7 +157,7 @@
     
     <div class="payment-info">
         <strong style="font-size: 15px;">Pembayaran ke :</strong><br>
-        Bank BCA a/n SUTARSNO<br>
+        Bank BCA a/n SUWARNO<br>
         0193151436
     </div>
     
@@ -170,7 +170,7 @@
     <div class="footer-signature clearfix">
         <div class="left-sign">
             <div>Dibuat oleh,</div>
-            <div style="margin-top: 50px;">( SUWARNO )</div>
+            <div style="margin-top: 50px;">( {{$data->owner}} )</div>
         </div>
         
         <div class="right-sign">

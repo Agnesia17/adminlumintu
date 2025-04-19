@@ -147,13 +147,13 @@
     </div>
 
     <div class="header">
-        <h1>LUMINTU ENERGI PERSADA, CV</h1>
+        <h1>{{$data->company}}</h1>
     </div>
 
     <div class="address">
-        Pergudangan Minyak Babe Ds. Wonoayu RT.02 RW.01 (Barat KUD)<br>
-        Kec. Wonoayu Kab. Sidoarjo Jawa Timur<br>
-        Telp. 0813-3093-6218 (Babe Suwarno), Email: lumintu.babe@gmail.com
+        {{$data->alamat_company}}<br>
+        {{-- Kec. Wonoayu Kab. Sidoarjo Jawa Timur<br> --}}
+        Telp. {{$data->no_telp}} ({{$data->owner}}), Email: {{$data->email_company}}
     </div>
 
     <div class="info-container">
@@ -199,7 +199,7 @@
             <p>Dibuat oleh,</p>
             <div class="signature-space mt-5"></div>
 
-            <p>(CV LUMINTU ENERGI PERSADA)</p>
+            <p>({{$data->company}})</p>
         </div>
         <div class="signature-right">
             <p>Tanda terima,</p>

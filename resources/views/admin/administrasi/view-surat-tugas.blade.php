@@ -78,10 +78,10 @@
         @if(isset($logoImage))
             <img src="data:image/png;base64,{{ $logoImage }}" alt="Logo" class="logo">
         @endif
-        <div class="company-name">LUMINTU ENERGI PERSADA, CV</div>
+        <div class="company-name">{{$data->company}}</div>
         <div class="company-details">
-            Perdagangan Minyak Babe Ds. Wonoyau RT.02 RW.01 (Barat KUDI) Kec. Wonoyau - Sidoarjo<br>
-            Telp: 0813-3093-6218 (Babe Suwarno), E-mail: lumintu.babe@gmail.com
+            {{$data->alamat_company}}<br>
+            Telp: {{$data->no_telp}} ({{$data->owner}}), E-mail: {{$data->email_company}}
         </div>
     </div>
 
@@ -94,10 +94,10 @@
         <p>Yang bertanda tangan di bawah ini:</p>
         <div class="info-grid">
             <div class="info-row">
-                <span class="label">Nama</span>: SUWARNO
+                <span class="label">Nama</span>: {{$data->owner}}
             </div>
             <div class="info-row">
-                <span class="label">Jabatan</span>: Direktur CV. Lumintu Energi Persada
+                <span class="label">Jabatan</span>: Direktur {{$data->company}}
             </div>
         </div>
 
@@ -128,7 +128,7 @@
     <div class="signature">
         <p>Sidoarjo, {{ $tanggal }}</p>
        <br>
-        <p>SUWARNO</p>
+        <p>{{$data->owner}}</p>
     </div>
 </body>
 </html>

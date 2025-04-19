@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\LaporanPembelian;
@@ -125,14 +126,16 @@ class LaporanPembelianController extends Controller
         $tanggal = Carbon::parse($pembelian->tanggal)->format('d/m/Y');
         $notaNumber = 'NOTA-' . str_pad($pembelian->id, 5, '0', STR_PAD_LEFT);
 
-        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+        $dataPerusahaan  = Profile::find(1);
+        $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $imageData = base64_encode(file_get_contents($imagePath));
 
         $pdf = PDF::loadView('admin.Laporan.nota-pembelian', [
             'pembelian' => $pembelian,
             'tanggal' => $tanggal,
             'notaNumber' => $notaNumber,
-            'logoImage' => $imageData
+            'logoImage' => $imageData,
+            'data' => $dataPerusahaan
         ]);
 
         $pdf->setPaper('A4', 'portrait');
@@ -149,14 +152,17 @@ class LaporanPembelianController extends Controller
 
         $tanggal = Carbon::parse($pembelian->tanggal)->format('d/m/Y');
         $notaNumber = 'NOTA-' . str_pad($pembelian->id, 5, '0', STR_PAD_LEFT);
-        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+
+        $dataPerusahaan  = Profile::find(1);
+        $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $imageData = base64_encode(file_get_contents($imagePath));
 
         $pdf = PDF::loadView('admin.Laporan.nota-pembelian', [
             'pembelian' => $pembelian,
             'tanggal' => $tanggal,
             'notaNumber' => $notaNumber,
-            'logoImage' => $imageData
+            'logoImage' => $imageData,
+            'data' => $dataPerusahaan
         ]);
 
         // $pdf->setPaper('A4');

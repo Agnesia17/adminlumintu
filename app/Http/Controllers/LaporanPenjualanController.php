@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\LaporanPenjualan;
 use App\Http\Controllers\Controller;
-use App\Exports\LaporanPenjualanExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\LaporanPenjualanExport;
 
 class LaporanPenjualanController extends Controller
 {
@@ -136,14 +137,16 @@ class LaporanPenjualanController extends Controller
         $tanggal = Carbon::parse($penjualan->tanggal)->format('d/m/Y');
         $notaNumber = 'NOTA-' . str_pad($penjualan->id, 5, '0', STR_PAD_LEFT);
 
-        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+        $dataPerusahaan  = Profile::find(1);
+        $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $imageData = base64_encode(file_get_contents($imagePath));
 
         $pdf = PDF::loadView('admin.Laporan.nota-penjualan', [
             'penjualan' => $penjualan,
             'tanggal' => $tanggal,
             'notaNumber' => $notaNumber,
-            'logoImage' => $imageData
+            'logoImage' => $imageData,
+            'data' => $dataPerusahaan
         ]);
 
         // Set specific options for better rendering
@@ -168,14 +171,17 @@ class LaporanPenjualanController extends Controller
         $penjualan = LaporanPenjualan::findOrFail($id);
         $tanggal = Carbon::parse($penjualan->tanggal)->format('d/m/Y');
         $notaNumber = 'NOTA-' . str_pad($penjualan->id, 5, '0', STR_PAD_LEFT);
-        $imagePath = public_path('sbadmin/img/cvlumintu.png');
+
+        $dataPerusahaan  = Profile::find(1);
+        $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $imageData = base64_encode(file_get_contents($imagePath));
 
         $pdf = PDF::loadView('admin.Laporan.nota-penjualan', [
             'penjualan' => $penjualan,
             'tanggal' => $tanggal,
             'notaNumber' => $notaNumber,
-            'logoImage' => $imageData
+            'logoImage' => $imageData,
+            'data' => $dataPerusahaan
         ]);
 
         $pdf->setPaper('A4', 'portrait');
