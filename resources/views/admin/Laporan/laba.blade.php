@@ -6,8 +6,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Laporan Laba</h1>
-        <a href="{{ route('laba.export', request()->query()) }}" class="d-none d-sm-inline-block btn btn-sm btn-success px-5 py-2 shadow-sm">
-            <i class="fas fa-download fa-sm text-white-50"></i> Unduh
+        <a href="{{ route('laba.export', request()->query()) }}" class="btn btn-success btn-sm px-5 py-2">
+            Download Excel
         </a>
     </div>
 

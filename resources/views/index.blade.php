@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>CV LUMINTU</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{asset('landingpage/assets/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <!-- AOS CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -358,16 +358,16 @@
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright copy; Your Website 2023</div>
-                <div class="col-lg-4 my-3 my-lg-0">
+                <div class="text-lg-center">Copyright copy; Lumintu Energi Persada 2025</div>
+                {{-- <div class="col-lg-4 my-3 my-lg-0">
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <div class="col-lg-4 text-lg-end">
+                </div> --}}
+                {{-- <div class="col-lg-4 text-lg-end">
                     <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
                     <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </footer>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanKeuanganController;
 use App\Http\Controllers\LaporanLabaController;
 use App\Http\Controllers\LaporanPembelianController;
 use App\Http\Controllers\LaporanPenjualanController;
@@ -79,6 +80,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/laba', [LaporanLabaController::class, 'index'])->name('laba');
     Route::get('/laba/export', [LaporanLabaController::class, 'export'])->name('laba.export');
+
+    Route::get('/keuangan', [LaporanKeuanganController::class, 'index'])->name('keuangan');
+    Route::get('/laporan-keuangan/export', [LaporanKeuanganController::class, 'export'])->name('laporan-keuangan.export');
+
 
     Route::get('/surat-tugas', [SuratTugasController::class, 'index'])->name('surat-tugas');
     Route::post('/surat-tugas', [SuratTugasController::class, 'store'])->name('surat-tugas.store');

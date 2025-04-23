@@ -67,9 +67,12 @@
                                         </button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
 
+                                    <div class="text-center">
                                         <a class="small" href="{{route('password.request')}}">Lupa Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="{{ url('/') }}" class="small">← Kembali ke Beranda</a>
                                     </div>
                                     {{-- <div class="text-center">
                                         <a class="small" href="{{route('register')}}">Daftar Akun</a>

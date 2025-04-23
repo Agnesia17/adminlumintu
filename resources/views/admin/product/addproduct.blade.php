@@ -19,7 +19,7 @@
                     <label for="harga_jual">Harga Jual</label>
                     <input type="number" name="harga_jual" placeholder="Masukan Harga Jual" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary px-5">Simpan</button>
+                <button type="submit" class="btn btn-success px-5">Simpan</button>
             </form>
         </div>
     </div>

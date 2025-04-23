@@ -12,13 +12,6 @@ class LaporanLabaController extends Controller
 {
     public function index(Request $request)
     {
-        // $laporanLaba = LaporanPenjualan::with('product')->paginate(10);
-        // $totalLabaKeseluruhan = LaporanPenjualan::with('product')->get()->sum(function ($laba) {
-        //     return ($laba->harga_jual - ($laba->product->harga_beli ?? 0)) * $laba->jumlah;
-        // });
-        // return view('admin.Laporan.laba', compact('laporanLaba', 'totalLabaKeseluruhan'));
-
-
         $baseQuery = LaporanPenjualan::with('product');
         $filteredQuery = clone $baseQuery;
 
