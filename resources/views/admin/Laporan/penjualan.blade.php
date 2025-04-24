@@ -21,6 +21,7 @@
     </div>
 
 <!-- filter card -->
+@if ($laporanPenjualan->count() > 0)
 <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-success">Filter Data</h6>
@@ -77,10 +78,14 @@
             </form>
         </div>
     </div>
+    @else
+    <div>
+    </div>
+    @endif
     <!-- end filter card -->
 
 
-
+    @if ($laporanPenjualan->count() > 0)
     <div class="card shadow">
         <div class="card-body">
             <table class="table custom-table">
@@ -116,6 +121,13 @@
                             </a>
                             <a href="{{ route('penjualan.download', $penjualan->id) }}" class="btn btn-sm btn-success">
                                 <i class="fas fa-download"></i>
+                            </a>
+                            <form id="delete-form-{{ $penjualan->id }}" action="{{ route('penjualan.destroy', $penjualan->id) }}" method="POST" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                            <a href="#" class="btn btn-sm btn-danger" onclick="confirmDelete({{ $penjualan->id }})">
+                                <i class="fas fa-trash"></i>
                             </a>
                             {{-- <a href="#" class="btn btn-sm btn-danger">
                                 <i class="fas fa-trash"></i>
@@ -160,13 +172,23 @@
     </div>
         </div>
     </div>
-
+    @else
+    <!-- Tampilan ketika tidak ada produk -->
+    <div class="card shadow">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
+            <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
+            <h5 class="text-gray-500">Tidak ada data Penjualan.</h5>
+            <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-success mt-3">
+                Tambah Data Penjualan
+            </a>
+        </div>
+    </div>
+    @endif
 </div>
 <!-- /.container-fluid -->
 
 
 @endsection
-
 @push('scripts')
 <script>
     $(document).ready(function() {
@@ -186,5 +208,23 @@
             confirmButtonText: 'OK'
         });
     @endif
+</script>
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: "Apakah Anda yakin?",
+            text: "Data yang dihapus tidak bisa dikembalikan!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Ya, Hapus!",
+            cancelButtonText: "Batal"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        });
+    }
 </script>
 @endpush

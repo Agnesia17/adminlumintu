@@ -95,10 +95,9 @@
     <!-- Tampilan ketika tidak ada produk -->
     <div class="card shadow">
         <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
-
-            <dotlottie-player src="https://lottie.host/bde8d481-4caf-4f4b-841f-879c5b5ae12e/8yrDucbsbm.lottie" class="text-center" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
+            <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
             <h5 class="text-gray-500">Tidak ada data produk.</h5>
-            <a href="{{route('product.addproduct')}}" class="btn btn-primary mt-3">
+            <a href="{{route('product.addproduct')}}" class="btn btn-success mt-3">
                 Tambah Produk
             </a>
         </div>

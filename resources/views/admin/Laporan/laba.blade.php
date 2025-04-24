@@ -155,7 +155,7 @@
             <!-- <dotlottie-player src="https://lottie.host/bde8d481-4caf-4f4b-841f-879c5b5ae12e/8yrDucbsbm.lottie" class="text-center" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player> -->
             <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
             <!-- <dotlottie-player src="https://lottie.host/fc217627-295e-478a-99a3-3dd4c5a50aa4/ba711NqmKQ.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player> -->
-            <h5 class="text-gray-500">Tidak ada data Penjualan.</h5>
+            <h5 class="text-gray-500">Tidak ada data Laba.</h5>
         </div>
     </div>
     @endif

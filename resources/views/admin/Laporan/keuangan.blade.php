@@ -9,7 +9,7 @@
         </a>
     </div>
 
-    
+    @if ($laporanKeuangan->count() > 0)
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-success">Filter Data</h6>
@@ -66,7 +66,12 @@
             </form>
         </div>
     </div>
+    @else
+    <div>
+    </div>
+    @endif
     {{-- START TABLE --}}
+    @if ($laporanKeuangan->count() > 0)
     <div class="card shadow">
         <div class="card-body">
             <table class="table custom-table">
@@ -132,6 +137,18 @@
             <!-- End Pagination -->
         </div>
     </div>
+    @else
+    <!-- Tampilan ketika tidak ada produk -->
+    <div class="card shadow">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
+            <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
+            <h5 class="text-gray-500">Tidak ada data Pembelian.</h5>
+            <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-success mt-3">
+                Tambah Data Pembelian
+            </a>
+        </div>
+    </div>
+    @endif
 </div>
 @endsection
 @push('scripts')

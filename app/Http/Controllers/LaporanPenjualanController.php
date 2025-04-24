@@ -57,6 +57,14 @@ class LaporanPenjualanController extends Controller
         return view('admin.Laporan.add-penjualan', compact('products'));
     }
 
+    public function destroy($id)
+    {
+        $laporanPenjualan = LaporanPenjualan::findOrFail($id);
+        $laporanPenjualan->delete();
+
+        return redirect()->route('penjualan')->with('success', 'Data Laporan Penjualan berhasil dihapus!');
+    }
+
     public function export(Request $request)
     {
         $query = LaporanPenjualan::query();

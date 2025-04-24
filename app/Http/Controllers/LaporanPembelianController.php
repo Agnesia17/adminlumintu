@@ -54,6 +54,14 @@ class LaporanPembelianController extends Controller
         return view('admin.Laporan.pembelian', compact('laporanPembelian', 'totalProduk', 'years'));
     }
 
+    public function destroy($id)
+    {
+        $laporanPembelian = LaporanPembelian::findOrFail($id);
+        $laporanPembelian->delete();
+
+        return redirect()->route('pembelian')->with('success', 'Data Laporan Pembelian berhasil dihapus!');
+    }
+
     public function export(Request $request)
     {
         $query = LaporanPembelian::query();
