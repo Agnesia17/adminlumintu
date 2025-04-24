@@ -123,7 +123,7 @@
                 <a class="collapse-item {{ request()->routeIs('pembelian') ||  request()->routeIs('pembelian.add-pembelian') ? 'text-success' : '' }}" href="{{ route('pembelian') }}">Laporan Pembelian</a>
                 <a class="collapse-item {{ request()->routeIs('penjualan') || request()->routeIs('penjualan.add-penjualan') ? 'text-success' : '' }}" href="{{ route('penjualan') }}">Laporan Penjualan</a>
                 <a class="collapse-item {{ request()->routeIs('laba') ? 'text-success' : '' }}" href="{{ route('laba') }}">Laporan Laba</a>
-                <a class="collapse-item {{ request()->routeIs('keuangan') ? 'text-success' : '' }}" href="{{ route('keuangan') }}">Laporan Keuangan</a>
+                <a class="collapse-item {{ request()->routeIs('keuangan') ? 'text-success' : '' }}" href="{{ route('keuangan') }}">Laporan Jurnal</a>
             </div>
         </div>
     </li>

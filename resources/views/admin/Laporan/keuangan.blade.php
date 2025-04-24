@@ -3,7 +3,7 @@
 <div class="container-fluid">
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Laporan Keuangan</h1>
+        <h1 class="h3 mb-0 text-gray-800">Laporan Jurnal</h1>
         <a href="{{ route('laporan-keuangan.export') }}" class="btn btn-success btn-sm px-5 py-2">
             Download Excel
         </a>
@@ -74,8 +74,8 @@
                     <tr>
                         <th>No</th>
                         <th>Tanggal</th>
-                        <th>Pemasukan</th>
-                        <th>Pengeluaran</th>
+                        <th>Debit</th>
+                        <th>Kredit</th>
                     </tr>
                 </thead>
                 <tbody>

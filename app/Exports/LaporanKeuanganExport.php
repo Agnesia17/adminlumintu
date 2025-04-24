@@ -27,7 +27,7 @@ class LaporanKeuanganExport implements FromCollection, WithHeadings, WithMapping
 
     public function headings(): array
     {
-        return ['No', 'Tanggal', 'Pemasukan', 'Pengeluaran'];
+        return ['No', 'Tanggal', 'Debit', 'Kredit'];
     }
 
     public function map($row): array

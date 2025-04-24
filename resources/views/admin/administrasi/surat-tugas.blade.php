@@ -19,9 +19,9 @@
                         <th>Nama</th>
                         <th>Nomer KTP</th>
                         <th>Alamat</th>
-                        <th>Tanggal</th>
+                        <th style="width: 100px;">Tanggal</th>
                         <th>Nomor Surat</th>
-                        <th class="text-center">Action</th>
+                        <th class="text-center" style="width: 100px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
