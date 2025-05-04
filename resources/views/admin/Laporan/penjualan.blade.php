@@ -14,9 +14,13 @@
             <a href="{{route('penjualan.add-penjualan')}}" class="btn btn-primary btn-sm px-5 py-2">
                 Tambah
             </a>
+            @if ($laporanPenjualan->count()>0)
             <a href="{{ route('penjualan.export') }}" class="btn btn-success btn-sm px-5 py-2">
                 Download
             </a>
+            @else
+                <div></div>
+            @endif
         </div>
     </div>
 
@@ -119,7 +123,7 @@
                             <a href="{{ route('penjualan.preview', $penjualan->id) }}" class="btn btn-sm btn-info" target="_blank">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="{{ route('penjualan.download', $penjualan->id) }}" class="btn btn-sm btn-success">
+                            <a href="{{ route('penjualan.download', $penjualan->id) }}" class="btn btn-sm btn-warning">
                                 <i class="fas fa-download"></i>
                             </a>
                             <form id="delete-form-{{ $penjualan->id }}" action="{{ route('penjualan.destroy', $penjualan->id) }}" method="POST" style="display: none;">
@@ -178,9 +182,16 @@
         <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
             <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
             <h5 class="text-gray-500">Tidak ada data Penjualan.</h5>
-            <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-success mt-3">
+            @if ($isFilterActive)
+            <a href="{{ route('penjualan') }}" class="btn btn-secondary mt-3">
+                Reset Filter
+            </a>
+            @else
+            <a href="{{route('penjualan.add-penjualan')}}" class="btn btn-success mt-3">
                 Tambah Data Penjualan
             </a>
+            @endif
+            
         </div>
     </div>
     @endif

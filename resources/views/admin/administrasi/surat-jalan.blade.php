@@ -41,7 +41,7 @@
             <a  href="{{route('surat-jalan.preview' ,  $letter->id)}}" target="_blank" class="btn btn-sm btn-info">
                 <i class="fas fa-eye"></i>
             </a>
-            <a href="{{route('surat-jalan.download', $letter->id)}}" class="btn btn-sm btn-success">
+            <a href="{{route('surat-jalan.download', $letter->id)}}" class="btn btn-sm btn-warning">
                 <i class="fas fa-download"></i>
             </a>
             <a class="btn btn-sm btn-success edit-btn"
@@ -122,7 +122,7 @@
                             <label>No Pol</label>
                             <input type="text" class="form-control" name="no_pol" id="edit_no_pol" required>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="produk">Produk</label>
                             <select class="form-control @error('id_product') is-invalid @enderror" name="id_product" id="id_product" required>
                                 <option value="">Pilih Produk</option>
@@ -135,7 +135,7 @@
                         @error('id_product')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                        </div>
+                        </div> --}}
                         <input type="hidden" name="nama_produk" id="edit_nama_produk">
                         {{-- <div class="form-group">
                             <label>Jenis Kendaraan</label>

@@ -10,9 +10,13 @@
             <a href="{{ route('pembelian.add-pembelian') }}" class="btn btn-primary btn-sm px-5 py-2">
                 Tambah
             </a>
+            @if ($laporanPembelian->count() > 0)
             <a href="{{ route('pembelian.export') }}" class="btn btn-success btn-sm px-5 py-2">
                 Download
             </a>
+            @else
+                <div></div>
+            @endif 
         </div>
     </div>
 
@@ -112,7 +116,7 @@
                             <a href="{{ route('pembelian.preview', $pembelian->id) }}" class="btn btn-sm btn-info" target="_blank">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="{{ route('pembelian.download', $pembelian->id) }}" class="btn btn-sm btn-success">
+                            <a href="{{ route('pembelian.download', $pembelian->id) }}" class="btn btn-sm btn-warning">
                                 <i class="fas fa-download"></i>
                             </a>
                             <form id="delete-form-{{ $pembelian->id }}" action="{{ route('pembelian.destroy', $pembelian->id) }}" method="POST" style="display: none;">
@@ -173,9 +177,15 @@
         <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
             <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
             <h5 class="text-gray-500">Tidak ada data Pembelian.</h5>
-            <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-success mt-3">
-                Tambah Data Pembelian
-            </a>
+            @if ($isFilterActive)
+                <a href="{{ route('pembelian') }}" class="btn btn-secondary mt-3">
+                    Reset Filter
+                </a>
+            @else
+                <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-success mt-3">
+                    Tambah Data Pembelian
+                </a>
+            @endif
         </div>
     </div>
     @endif

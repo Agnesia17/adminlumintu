@@ -4,9 +4,14 @@
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Laporan Jurnal</h1>
+        @if ($laporanKeuangan->count() > 0)
         <a href="{{ route('laporan-keuangan.export') }}" class="btn btn-success btn-sm px-5 py-2">
             Download Excel
         </a>
+        @else
+        <div></div>
+        @endif
+        
     </div>
 
     @if ($laporanKeuangan->count() > 0)
@@ -142,10 +147,12 @@
     <div class="card shadow">
         <div class="card-body d-flex flex-column justify-content-center align-items-center py-5">
             <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
-            <h5 class="text-gray-500">Tidak ada data Pembelian.</h5>
-            <a href="{{route('pembelian.add-pembelian')}}" class="btn btn-success mt-3">
-                Tambah Data Pembelian
-            </a>
+            <h5 class="text-gray-500">Tidak ada data Jurnal.</h5>
+            @if ($isFilterActive)
+                <a href="{{route('keuangan')}}" class="btn btn-secondary mt-3">Reset Filter</a>
+             @else
+             <div></div>   
+             @endif
         </div>
     </div>
     @endif

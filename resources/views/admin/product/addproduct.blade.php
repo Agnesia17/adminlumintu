@@ -38,7 +38,6 @@
             timer: 3000
         });
         @endif
-
     });
 </script>
 @endpush

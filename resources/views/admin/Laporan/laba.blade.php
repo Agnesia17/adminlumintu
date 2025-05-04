@@ -6,9 +6,13 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Laporan Laba</h1>
+        @if ($laporanLaba->count() > 0)
         <a href="{{ route('laba.export', request()->query()) }}" class="btn btn-success btn-sm px-5 py-2">
             Download Excel
         </a>
+        @else
+        <div></div>
+        @endif
     </div>
 
     <!-- Filter Form -->
@@ -156,6 +160,11 @@
             <dotlottie-player src="https://lottie.host/cf014dcb-b70f-48a4-9c40-74be4c810d6e/QRpmBC5qqU.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player>
             <!-- <dotlottie-player src="https://lottie.host/fc217627-295e-478a-99a3-3dd4c5a50aa4/ba711NqmKQ.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" loop autoplay></dotlottie-player> -->
             <h5 class="text-gray-500">Tidak ada data Laba.</h5>
+            @if ($isFilterActive)
+                <a href="{{route('laba')}}" class="btn btn-secondary mt-3">Reset Filter</a>
+             @else
+             <div></div>   
+            @endif
         </div>
     </div>
     @endif

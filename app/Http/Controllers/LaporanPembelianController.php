@@ -23,20 +23,20 @@ class LaporanPembelianController extends Controller
         $baseQuery = LaporanPembelian::query();
         $filteredQuery = clone $baseQuery;
 
-        // Terapkan filter jika ada
+        $isFilterActive = false;
+
         if ($request->filled('start_date') && $request->filled('end_date')) {
             $baseQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
-            $filteredQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+            $isFilterActive = true;
         }
 
         if ($request->filled('month') && $request->filled('year')) {
             $baseQuery->whereMonth('tanggal', $request->month)
                 ->whereYear('tanggal', $request->year);
-            $filteredQuery->whereMonth('tanggal', $request->month)
-                ->whereYear('tanggal', $request->year);
+            $isFilterActive = true;
         } elseif ($request->filled('year')) {
             $baseQuery->whereYear('tanggal', $request->year);
-            $filteredQuery->whereYear('tanggal', $request->year);
+            $isFilterActive = true;
         }
 
         $laporanPembelian = $baseQuery->paginate(10);
@@ -51,8 +51,9 @@ class LaporanPembelianController extends Controller
             ->orderBy('year', 'desc')
             ->pluck('year');
 
-        return view('admin.Laporan.pembelian', compact('laporanPembelian', 'totalProduk', 'years'));
+        return view('admin.Laporan.pembelian', compact('laporanPembelian', 'totalProduk', 'years', 'isFilterActive'));
     }
+
 
     public function destroy($id)
     {

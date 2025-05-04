@@ -26,12 +26,16 @@ class LaporanKeuanganController extends Controller
         $pembelianQuery = LaporanPembelian::query();
         $penjualanQuery = LaporanPenjualan::query();
 
+        $isFilterActive = false;
+
         if ($startDate && $endDate) {
             $pembelianQuery->whereBetween('tanggal', [$startDate, $endDate]);
             $penjualanQuery->whereBetween('tanggal', [$startDate, $endDate]);
+            $isFilterActive = true;
         } elseif ($month && $year) {
             $pembelianQuery->whereMonth('tanggal', $month)->whereYear('tanggal', $year);
             $penjualanQuery->whereMonth('tanggal', $month)->whereYear('tanggal', $year);
+            $isFilterActive = true;
         }
 
         $pengeluaran = $pembelianQuery->selectRaw('tanggal, SUM(total) as total')
@@ -70,7 +74,8 @@ class LaporanKeuanganController extends Controller
             'laporanKeuangan',
             'totalPemasukanPerPage',
             'totalPengeluaranPerPage',
-            'years'
+            'years',
+            'isFilterActive'
         ));
     }
 

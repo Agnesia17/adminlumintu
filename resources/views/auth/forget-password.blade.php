@@ -51,7 +51,7 @@
                                     <hr>
                                     
                                     <div class="text-center">
-                                        <a class="small" href="#">Sudah Punya Akun? Login!</a>
+                                        <a class="small" href="{{route('login')}}">Sudah Punya Akun? Login!</a>
                                     </div>
                                 </div>
                             </div>

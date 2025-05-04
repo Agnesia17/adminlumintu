@@ -20,10 +20,13 @@ class LaporanPenjualanController extends Controller
         $baseQuery = LaporanPenjualan::query();
         $filteredQuery = clone $baseQuery;
 
+        $isFilterActive = false;
+
         // Terapkan filter jika ada
         if ($request->filled('start_date') && $request->filled('end_date')) {
             $baseQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
             $filteredQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+            $isFilterActive = true;
         }
 
         if ($request->filled('month') && $request->filled('year')) {
@@ -31,9 +34,11 @@ class LaporanPenjualanController extends Controller
                 ->whereYear('tanggal', $request->year);
             $filteredQuery->whereMonth('tanggal', $request->month)
                 ->whereYear('tanggal', $request->year);
+            $isFilterActive = true;
         } elseif ($request->filled('year')) {
             $baseQuery->whereYear('tanggal', $request->year);
             $filteredQuery->whereYear('tanggal', $request->year);
+            $isFilterActive = true;
         }
 
         $laporanPenjualan = $baseQuery->paginate(10);
@@ -48,7 +53,7 @@ class LaporanPenjualanController extends Controller
             ->orderBy('year', 'desc')
             ->pluck('year');
 
-        return view('admin.Laporan.penjualan', compact('laporanPenjualan', 'totalProduk', 'years'));
+        return view('admin.Laporan.penjualan', compact('laporanPenjualan', 'totalProduk', 'years', 'isFilterActive'));
     }
 
     public function create()

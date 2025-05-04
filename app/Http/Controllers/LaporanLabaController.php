@@ -14,11 +14,14 @@ class LaporanLabaController extends Controller
     {
         $baseQuery = LaporanPenjualan::with('product');
         $filteredQuery = clone $baseQuery;
+        $isFilterActive = false;
+
 
         // Terapkan filter jika ada
         if ($request->filled('start_date') && $request->filled('end_date')) {
             $baseQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
             $filteredQuery->whereBetween('tanggal', [$request->start_date, $request->end_date]);
+            $isFilterActive = true;
         }
 
         if ($request->filled('month') && $request->filled('year')) {
@@ -26,9 +29,11 @@ class LaporanLabaController extends Controller
                 ->whereYear('tanggal', $request->year);
             $filteredQuery->whereMonth('tanggal', $request->month)
                 ->whereYear('tanggal', $request->year);
+            $isFilterActive = true;
         } elseif ($request->filled('year')) {
             $baseQuery->whereYear('tanggal', $request->year);
             $filteredQuery->whereYear('tanggal', $request->year);
+            $isFilterActive = true;
         }
 
         // Data untuk tabel dengan pagination
@@ -45,7 +50,7 @@ class LaporanLabaController extends Controller
             ->orderBy('year', 'desc')
             ->pluck('year');
 
-        return view('admin.Laporan.laba', compact('laporanLaba', 'totalLabaKeseluruhan', 'years'));
+        return view('admin.Laporan.laba', compact('laporanLaba', 'totalLabaKeseluruhan', 'years', 'isFilterActive'));
     }
 
 

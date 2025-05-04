@@ -37,7 +37,7 @@
             <a  href="{{ route('surat-tugas.preview', $letter->id) }}" target="_blank" class="btn btn-sm btn-info">
                 <i class="fas fa-eye"></i>
             </a>
-            <a href="{{ route('surat-tugas.download', $letter->id) }}" class="btn btn-sm btn-success">
+            <a href="{{ route('surat-tugas.download', $letter->id) }}" class="btn btn-sm btn-warning">
                 <i class="fas fa-download"></i>
             </a>
         <a class="btn btn-sm btn-success edit-btn"

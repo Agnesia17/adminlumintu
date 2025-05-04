@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         body {
@@ -43,7 +44,6 @@
 </head>
 
 <body>
-
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -116,40 +116,50 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+@if(session('success'))
+    Swal.fire({
+        title: 'Sukses!',
+        text: '{{ session('success') }}',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+@endif
+</script>
     
-    <script>
-        // Image preview functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoInput = document.getElementById('logoInput');
-            const logoPreview = document.getElementById('logoPreview');
-            const previewImg = logoPreview.querySelector('img');
-            const currentLogo = document.getElementById('currentLogo');
-            const cancelBtn = document.getElementById('cancelBtn');
-            
-            logoInput.addEventListener('change', function() {
-                const file = this.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(e) {
-                        previewImg.src = e.target.result;
-                        logoPreview.style.display = 'block';
-                        currentLogo.style.display = 'none';
-                    }
-                    
-                    reader.readAsDataURL(file);
+<script>
+    // Image preview functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoInput = document.getElementById('logoInput');
+        const logoPreview = document.getElementById('logoPreview');
+        const previewImg = logoPreview.querySelector('img');
+        const currentLogo = document.getElementById('currentLogo');
+        const cancelBtn = document.getElementById('cancelBtn');
+        
+        logoInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    logoPreview.style.display = 'block';
+                    currentLogo.style.display = 'none';
                 }
-            });
-            
-            // Cancel button functionality
-            cancelBtn.addEventListener('click', function() {
-                logoInput.value = '';
-                logoPreview.style.display = 'none';
-                currentLogo.style.display = 'block';
-            });
+                
+                reader.readAsDataURL(file);
+            }
         });
-    </script>
+        
+        // Cancel button functionality
+        cancelBtn.addEventListener('click', function() {
+            logoInput.value = '';
+            logoPreview.style.display = 'none';
+            currentLogo.style.display = 'block';
+        });
+    });
+</script>
 </body>
 
 </html>

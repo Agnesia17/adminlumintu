@@ -281,10 +281,10 @@
                             <div class="perihal-hover">
                                 <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/perihal/Akta Pendirian.jpg')}}" alt="Akta Pendirian" />
                         </a>
                         <div class="perihal-caption">
-                            <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
+                            <div class="perihal-caption-heading">AKTA PENDIRIAN</div>
                         </div>
                     </div>
                 </div>
@@ -295,10 +295,10 @@
                             <div class="perihal-hover">
                                 <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/perihal/NPWP.jpg')}}" alt="NPWP" />
                         </a>
                         <div class="perihal-caption">
-                            <div class="perihal-caption-heading">USED COOKING OIL (UCO) MINYAK JELANTAH</div>
+                            <div class="perihal-caption-heading">NOMOR POKOK WAJIB PAJAK (NPWP)</div>
                         </div>
                     </div>
 
@@ -310,17 +310,16 @@
                             <div class="perihal-hover">
                                 <div class="perihal-hover-content"><i class="fas fa-eye fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="Used Cooking Oil" />
+                            <img class="img-fluid landscape-img" src="{{asset('landingpage/assets/img/perihal/IUP.jpg')}}" alt="Used Cooking Oil" />
                         </a>
                         <div class="perihal-caption">
-                            <div class="perihal-caption-heading">USED COOKING OIL</div>
+                            <div class="perihal-caption-heading">IJIN USAHA PERDAGANGAN</div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
     </section>
     <section class="page-section" id="team">
         <div class="container">
@@ -335,39 +334,12 @@
             </div>
         </div>
     </section>
-{{-- 
-    <div class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+
     <!-- footer -->
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="text-lg-center">Copyright copy; Lumintu Energi Persada 2025</div>
-                {{-- <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div> --}}
-                {{-- <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                </div> --}}
             </div>
         </div>
     </footer>
@@ -381,10 +353,10 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
-                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
-                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
-                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
+                                <h2 class="text-uppercase">Ijin Usaha Perdagangan (IUP) </h2>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/perihal/IUP.jpg')}}" alt="..." />
+                                <p>Ijin Usaha Perdagangan (IUP) Kecil Nomor 510/144/404.6.2/2014 yang diterbitkan
+                                    oleh Pemerintah Kabupaten Sidoarjo tertanggal 11 maret 2014</p>
                                 <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
@@ -404,10 +376,12 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
-                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
-                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
-                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
+                                <h2 class="text-uppercase">Akta Pendirian</h2>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/perihal/Akta Pendirian.jpg')}}" alt="..." />
+                                <p>Akta Pendirian Nomor 01 yang disahkan oleh Notaris M.Hilmi SH, M.H ,MKn
+                                    tertanggal 04 Nopember 2013 ;
+                                    Tanda Daftar dan Pengesahan Akta Pendirian oleh Pengadilan Negeri Sidoarjo Nomor
+                                    HT 01.04.26/2010/PN.TNG tertanggal 11 Maret 2014</p>
                                 <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>
@@ -427,10 +401,11 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">USED COOKING OIL(UCO) / MINYAK JELANTAH</h2>
-                                <p class="item-intro text-muted">Berasal dari sisa penggunaan rumah tangga dan industri</p>
-                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/Produk/minyakjelantah.jpg')}}" alt="..." />
-                                <p>Used Cooking Oil (UCO) atau minyak jelantah adalah sisa minyak goreng yang telah digunakan dan dapat diolah kembali sebagai bahan baku untuk pembuatan biodiesel, sehingga mengurangi limbah dan mendukung energi berkelanjutan.</p>
+                                <h2 class="text-uppercase">Nomor Pokok Wajib Pajak (NPWP) </h2>
+                                <img class="img-fluid d-block mx-auto" src="{{asset('landingpage/assets/img/perihal/NPWP.jpg')}}" alt="..." />
+                                <p>Nomor Pokok Wajib Pajak (NPWP) Nomor 66.250.231.9-603.000 yang diterbitkan
+                                    oleh Departemen Keuangan Republik Indonesia Direktorat Jenderal Pajak Kantor
+                                    Wilayah Sidoarjo</p>
                                 <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     KEMBALI
                                 </button>

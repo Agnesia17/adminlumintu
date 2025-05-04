@@ -115,6 +115,16 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    @if ($errors->any() && session('edit_id'))
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                
                     <form id="editForm" method="POST">
                         @csrf
                         @method('PUT')
@@ -133,7 +143,7 @@
                         </div>
                         <button type="submit" class="btn btn-success">Simpan Perubahan</button>
                     </form>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
@@ -144,6 +154,24 @@
 
 
 @push('scripts')
+<script>
+    $(document).ready(function () {
+        @if (session('edit_id'))
+            let id = {{ session('edit_id') }};
+            let row = $('.edit-btn[data-id="' + id + '"]');
+            if (row.length) {
+                // Ambil kembali data dari baris tombol edit
+                $('#edit_id').val(id);
+                $('#edit_nama').val(row.data('nama'));
+                $('#edit_harga_beli').val(row.data('harga-beli'));
+                $('#edit_harga_jual').val(row.data('harga-jual'));
+                $('#editForm').attr('action', '{{ route("product.update", ":id") }}'.replace(':id', id));
+                $('#editModal').modal('show');
+            }
+        @endif
+    });
+</script>
+
 <script>
     $(document).ready(function() {
         $('.table').DataTable({

@@ -87,7 +87,7 @@ class SuratJalanController extends Controller
     {
         $validate =  $request->validate([
             'nama_penerima' => 'required|string|max:255',
-            'nama_produk' => 'required|string',
+            // 'nama_produk' => 'required|string',
             'jenis_kendaraan' => 'required|string',
             'no_pol' => 'required|string',
             'tanggal' => 'required|date',
@@ -103,7 +103,7 @@ class SuratJalanController extends Controller
         $suratJalan->update([
             'nama_penerima' => $request->nama_penerima,
             'no_pol' => $request->no_pol,
-            'nama_produk' => $request->nama_produk,
+            // 'nama_produk' => $request->nama_produk,
             'jenis_kendaraan' => $request->jenis_kendaraan,
             'jumlah' => $request->jumlah,
             'tanggal' => $tanggalFormatted,

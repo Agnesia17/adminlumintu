@@ -56,6 +56,12 @@ class ProductController extends Controller
         ]);
 
         $produk = Product::findOrFail($id);
+        if ($request->harga_beli > $request->harga_jual) {
+            return redirect()->back()
+                ->withErrors(['harga_beli' => 'Harga beli tidak boleh lebih tinggi dari harga jual'])
+                ->withInput()
+                ->with('edit_id', $id);
+        }
         $produk->update([
             'nama_produk' => $request->nama_produk,
             'harga_beli' => $request->harga_beli,
