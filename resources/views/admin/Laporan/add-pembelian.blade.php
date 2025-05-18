@@ -45,7 +45,7 @@
 
                     <div class="col-md-6">
                         <label for="jumlah">Jumlah/Kg</label>
-                        <input type="number" class="form-control @error('jumlah') is-invalid @enderror" name="jumlah" id="jumlah" value="{{ old('jumlah') }}" required>
+                        <input type="number" step="0.1" class="form-control @error('jumlah') is-invalid @enderror" name="jumlah" id="jumlah" value="{{ old('jumlah') }}" required>
                         @error('jumlah')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

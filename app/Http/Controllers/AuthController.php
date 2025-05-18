@@ -14,46 +14,53 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    # menampilkan halaman login
     public function showLogin()
     {
         return view('admin.login');
     }
-
+    # menampilkan halaman register
     public function showRegister()
     {
         return view('admin.register');
     }
-
+    # menampilkan halaman lupa password
     public function showForgetPassword()
     {
         return view('auth.forget-password');
     }
-
+    # menampilkan halaman reset password dengan data token berdasarkan email user
     public function showResetPassword(Request $request, $token)
     {
         return view('auth.reset-password', ['token' => $token, 'email' => $request->email]);
     }
-
+    # mengirim url link untuk reset password
     public function sendResetLink(Request $request)
     {
+        # validasi email apakah sesuai
         $request->validate(['email' => 'required|email']);
 
+        # mengirim url reset link password
         $status = Password::sendResetLink(
             $request->only('email')
         );
 
+        # jika sukses route ke menu reset password
         return $status === Password::RESET_LINK_SENT
             ? view('auth.password-email')->with(['status' => __($status)])
             : back()->withErrors(['email' => __($status)]);
     }
 
+    # fungsi untuk reset password
     public function resetPassword(Request $request)
     {
+        # validasi apakah data yang diperlukan sesuai
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8|confirmed',
         ]);
+
 
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
@@ -81,21 +88,25 @@ class AuthController extends Controller
             }
             return redirect()->route('login')->with('success', 'Password berhasil direset. Silakan login dengan password baru Anda.');
         }
-
+        # kembali ke menu sebelumnya karena error
         return back()->withErrors(['email' => __($status)]);
     }
 
+    // fungsi untuk login
     public function login(Request $request)
     {
+        // cek apakah data yang dimasukkan sesuai
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
+        // jika data akun yang dimasukan benar maka data user ditemukan
         if (Auth::attempt($credentials, $request->has('remember'))) {
+            // membuat autentikasi user dan generate session
             $user = Auth::user();
             $request->session()->regenerate();
 
+            // jika email user belum terverifikasi maka kirim email
             if ($user->email_verified_at === null) {
                 Auth::logout();
                 $user->sendEmailVerificationNotification();
@@ -105,14 +116,16 @@ class AuthController extends Controller
                 return redirect()->route('verification.notice')
                     ->with('success', 'Silakan Periksa Email untuk verifikasi akun, supaya dapat segera digunakan');
             }
+            // jika sudah maka diarahkan ke halaman dashbord
             return redirect()->intended('/dashboard');
         }
-
+        // jika gagal tetap dihalaman login
         return back()->withErrors([
             'email' => 'Email atau password yang dimasukkan tidak valid.',
         ])->withInput($request->except('password'));
     }
 
+    // fungsi untuk register
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -154,9 +167,10 @@ class AuthController extends Controller
             ->with('success', 'Registrasi berhasil! Silakan cek email Anda untuk verifikasi akun. Setelah verifikasi, Anda akan dapat login ke sistem.');
     }
 
-
+    // fungsi untun logout
     public function logout(Request $request)
     {
+        // AUTENTIKASI DATA DIHAPUS  dan session dihapus kemudian menuju halaman login
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

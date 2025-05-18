@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 
 class SuratTugasController extends Controller
 {
-    //
+    // menampilkan halaman surat tugas
     public function index()
     {
         $letters = SuratTugas::paginate(10);
@@ -21,11 +21,12 @@ class SuratTugasController extends Controller
         return view('admin.administrasi.surat-tugas', compact('letters'));
     }
 
+    // menampilkan halaman tambah surat tugas
     public function create()
     {
         $lastId = SuratTugas::max('id') + 1;
         $monthYear = Carbon::now()->format('m/Y');
-
+        // membuat nomer surat
         $noSurat = "ST/" . str_pad($lastId, 2, '0', STR_PAD_LEFT) . "/LEP/" . $monthYear;
         return view('admin.administrasi.add-surat', compact('noSurat'));
     }
@@ -41,7 +42,7 @@ class SuratTugasController extends Controller
                 'masa' => 'required|date',
                 'tanggal' => 'required|date'
             ]);
-
+            // mendapatkan tanggal sekarang dan konversi
             $tanggalFormatted = date('Y-m-d', strtotime($validate['tanggal']));
             $masaFormatted = \Carbon\Carbon::parse($tanggalFormatted)->addMonths(6)->format('Y-m-d');
 
@@ -51,9 +52,8 @@ class SuratTugasController extends Controller
 
             // Buat format No Surat
             $noSurat = "ST/" . str_pad($lastId, 2, '0', STR_PAD_LEFT) . "/LEP/" . $monthYear;
-            // dd($validate);
-            // dump($validate);
 
+            // fungsi menambahkan surat tugas ke database
             SuratTugas::create([
                 'nama' => $validate['nama'],
                 'no_ktp' => $validate['no_ktp'],
@@ -62,7 +62,7 @@ class SuratTugasController extends Controller
                 'masa' => $masaFormatted, // Tidak ambil dari request
                 'no_surat' => $noSurat,
             ]);
-
+            // mengembbalikan ke dalam halaman surat tugas
             return redirect()->route('surat-tugas')->with('success', 'Surat tugas berhasil dibuat.');
         } catch (\Illuminate\Validation\ValidationException $e) {
             return redirect()->back()->withErrors($e->validator)->withInput();
@@ -72,6 +72,7 @@ class SuratTugasController extends Controller
         }
     }
 
+    // menampilkan review surat tugas
     public function preview($id)
     {
         $suratTugas = SuratTugas::findOrFail($id);
@@ -98,17 +99,20 @@ class SuratTugasController extends Controller
             'Attachment' => false
         ]);
     }
-
+    // fungsi untuk download surat ke perangkat
     public function download($id)
     {
         $suratTugas = SuratTugas::findOrFail($id);
 
         // Format tanggal
         $tanggal = Carbon::parse($suratTugas->tanggal)->format('d F Y');
-
+        // mendapatkan data company dari database
         $dataPerusahaan  = Profile::find(1);
+
+        // load gambar
         $imagePath = public_path('storage/logos/' . $dataPerusahaan->logo_company);
         $logoImage = base64_encode(file_get_contents($imagePath));
+
 
         $pdf = PDF::loadView('admin.administrasi.view-surat-tugas', [
             'suratTugas' => $suratTugas,
@@ -118,15 +122,17 @@ class SuratTugasController extends Controller
         ]);
 
         $pdf->setPaper('A4', 'portrait');
-
+        // format nama
         $cleanFileName = str_replace(['/', '\\'], '-', $suratTugas->no_surat);
 
         // Force download
         return $pdf->download('surat-tugas-' . $cleanFileName . '.pdf');
     }
 
+    // fungsi ubah data dari surat tugas
     public function update(Request $request, $id)
     {
+        // validasi data yang dimasukkan
         $validate =  $request->validate([
             'nama' => 'required|string|max:255',
             'no_ktp' => 'required|numeric',
@@ -134,11 +140,12 @@ class SuratTugasController extends Controller
             'masa' => 'required|date',
             'tanggal' => 'required|date'
         ]);
-
+        // format tanggal
         $tanggalFormatted = date('Y-m-d', strtotime($validate['tanggal']));
         $masaFormatted = \Carbon\Carbon::parse($tanggalFormatted)->addMonths(6)->format('Y-m-d');
 
         $suratTugas = SuratTugas::findOrFail($id);
+        // fungsi ubah data yang diperlukan
         $suratTugas->update([
             'nama' => $request->nama,
             'no_ktp' => $request->no_ktp,

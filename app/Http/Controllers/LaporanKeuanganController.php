@@ -18,26 +18,31 @@ class LaporanKeuanganController extends Controller
 
     public function index(Request $request)
     {
+        // tahapan filter data
         $startDate = $request->start_date;
         $endDate = $request->end_date;
         $month = $request->month;
         $year = $request->year;
 
+        // Mendapatkan data laporan penjualan dan pembelian
         $pembelianQuery = LaporanPembelian::query();
         $penjualanQuery = LaporanPenjualan::query();
 
         $isFilterActive = false;
 
         if ($startDate && $endDate) {
+            // Data yang difilter berdasarkan tanggal awal dan tanggal akhir
             $pembelianQuery->whereBetween('tanggal', [$startDate, $endDate]);
             $penjualanQuery->whereBetween('tanggal', [$startDate, $endDate]);
             $isFilterActive = true;
         } elseif ($month && $year) {
+            // Data yang difilter berdasarkan bulan dan tahun
             $pembelianQuery->whereMonth('tanggal', $month)->whereYear('tanggal', $year);
             $penjualanQuery->whereMonth('tanggal', $month)->whereYear('tanggal', $year);
             $isFilterActive = true;
         }
 
+        // Filter untuk menampilkan data
         $pengeluaran = $pembelianQuery->selectRaw('tanggal, SUM(total) as total')
             ->groupBy('tanggal')->get()->keyBy('tanggal');
 
@@ -54,6 +59,7 @@ class LaporanKeuanganController extends Controller
             ];
         });
 
+        // data ditampilkan tiap 10 page
         $perPage = 10;
         $currentPage = Paginator::resolveCurrentPage();
         $currentItems = $laporanKeuanganCollection->slice(($currentPage - 1) * $perPage, $perPage)->values();
@@ -70,6 +76,7 @@ class LaporanKeuanganController extends Controller
         $totalPengeluaranPerPage = $currentItems->sum('pengeluaran');
         $years = range(now()->year, now()->year - 5);
 
+        // menampilkan halaman laporan keuangan dengan filter atau tidak seerta membawah data
         return view('admin.Laporan.keuangan', compact(
             'laporanKeuangan',
             'totalPemasukanPerPage',
@@ -79,7 +86,7 @@ class LaporanKeuanganController extends Controller
         ));
     }
 
-    public function export(Request $request)
+    public function export()
     {
         $laporanPembelian = \App\Models\LaporanPembelian::selectRaw('tanggal, SUM(total) as total_pengeluaran')
             ->groupBy('tanggal')->pluck('total_pengeluaran', 'tanggal');
